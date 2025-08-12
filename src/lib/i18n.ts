@@ -175,7 +175,7 @@ export const translations = {
     // Footer
     footerDescription: "El futuro de la gestión de eventos. Ticketing integral, escaneo QR offline, participación social y análisis en tiempo real en una plataforma poderosa.",
     product: "Producto",
-    features: "Características",
+    footerFeatures: "Características",
     pricing: "Precios",
     apiDocs: "Documentación API",
     mobileApps: "Apps Móviles",
@@ -394,7 +394,7 @@ export const translations = {
     // Footer
     footerDescription: "The future of event management. Comprehensive ticketing, offline QR scanning, social engagement, and real-time analytics in one powerful platform.",
     product: "Product",
-    features: "Features",
+    footerFeatures: "Features",
     pricing: "Pricing",
     apiDocs: "API Docs",
     mobileApps: "Mobile Apps",

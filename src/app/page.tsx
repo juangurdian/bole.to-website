@@ -1,10 +1,8 @@
 "use client";
 import Link from "next/link";
-import { motion } from "framer-motion";
 import { DraggableCardContainer, DraggableCardBody } from "@/components/DraggableCard";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { useTranslation } from "@/contexts/LanguageContext";
-import { useState, useEffect } from "react";
 
 export default function Home() {
   const { t } = useTranslation();
@@ -53,17 +51,17 @@ export default function Home() {
             </div>
           </header>
 
-          <section className="px-4 sm:px-6 pt-16 sm:pt-20 pb-24 sm:pb-32 text-center relative">
+          <section className="px-4 sm:px-6 lg:px-8 pt-12 sm:pt-16 lg:pt-20 pb-20 sm:pb-28 lg:pb-32 text-center relative">
             <div className="mx-auto max-w-7xl">
-              <div className="inline-flex items-center rounded-full border border-foreground/20 bg-background/50 backdrop-blur-sm px-3 sm:px-4 py-2 text-xs mb-6 sm:mb-8 animate-fade-in-up shadow-lg">
+              <div className="inline-flex items-center rounded-full border border-foreground/20 bg-background/50 backdrop-blur-sm px-3 sm:px-4 py-2 text-xs sm:text-sm mb-6 sm:mb-8 animate-fade-in-up shadow-lg">
                 <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse mr-2"></div>
                 <span className="text-foreground/80">{t('introducing')}</span>
-                <span className="mx-2 h-1 w-1 rounded-full bg-foreground/30" />
+                <span className="mx-1 sm:mx-2 h-1 w-1 rounded-full bg-foreground/30" />
                 <span className="font-medium bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">bole.to</span>
               </div>
 
-              <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight mb-4 sm:mb-6 animate-fade-in-up animation-delay-200 leading-tight">
-                <span className="bg-gradient-to-r from-foreground via-foreground/90 to-foreground bg-clip-text text-transparent block">
+              <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight mb-4 sm:mb-6 animate-fade-in-up animation-delay-200 leading-tight px-2">
+                <span className="bg-gradient-to-r from-foreground via-foreground/90 to-foreground bg-clip-text text-transparent block mb-2">
                   {t('buildWith')}
                 </span>
                 <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent animate-gradient block">
@@ -71,14 +69,14 @@ export default function Home() {
                 </span>
               </h1>
               
-              <p className="mt-6 sm:mt-8 text-base sm:text-lg lg:text-xl text-foreground/70 max-w-2xl lg:max-w-3xl mx-auto leading-relaxed animate-fade-in-up animation-delay-400 px-2">
+              <p className="mt-6 sm:mt-8 text-base sm:text-lg lg:text-xl text-foreground/70 max-w-2xl lg:max-w-3xl mx-auto leading-relaxed mobile:leading-relaxed animate-fade-in-up animation-delay-400 px-4">
                 {t('heroCopy')}
               </p>
               
-              <div className="mt-8 sm:mt-12 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center animate-fade-in-up animation-delay-600 px-2">
+              <div className="mt-8 sm:mt-12 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center animate-fade-in-up animation-delay-600 px-4">
                 <a
                   href="mailto:hello@bole.to?subject=Join%20the%20bole.to%20waitlist"
-                  className="group inline-flex items-center justify-center rounded-full bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base font-medium hover:shadow-lg hover:scale-105 transition-all duration-200 gpu-accelerated"
+                  className="group inline-flex items-center justify-center rounded-full bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base font-medium hover:shadow-lg hover:scale-105 transition-all duration-200 gpu-accelerated mobile:touch-target"
                 >
                   {t('joinWaitlist')}
                   <svg className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform duration-200 gpu-accelerated" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -87,7 +85,7 @@ export default function Home() {
                 </a>
                 <Link
                   href="#features"
-                  className="inline-flex items-center justify-center rounded-full border border-foreground/20 bg-background/50 backdrop-blur-sm px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base font-medium hover:bg-foreground/5 hover:scale-105 transition-all duration-300"
+                  className="inline-flex items-center justify-center rounded-full border border-foreground/20 bg-background/50 backdrop-blur-sm px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base font-medium hover:bg-foreground/5 hover:scale-105 transition-all duration-300 mobile:touch-target"
                 >
                   {t('learnMore')}
                 </Link>
@@ -100,7 +98,7 @@ export default function Home() {
                 </div>
                 <div className="hidden sm:block w-px h-4 bg-foreground/20"></div>
                 <div className="flex items-center gap-2 text-xs sm:text-sm text-foreground/60">
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                   </svg>
                   <span>{t('secureReliable')}</span>
@@ -109,19 +107,19 @@ export default function Home() {
             </div>
           </section>
 
-          <section id="features" className="px-4 sm:px-6 py-16 sm:py-20 lg:py-24">
+          <section id="features" className="px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
             <div className="mx-auto max-w-7xl">
               <div className="text-center mb-12 sm:mb-16">
-                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight mb-3 sm:mb-4 bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent">
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold tracking-tight mb-3 sm:mb-4 bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent px-2">
                   {t('whyChoose')}
                 </h2>
-                <p className="text-base sm:text-lg text-foreground/70 max-w-2xl mx-auto px-4">
+                <p className="text-base sm:text-lg lg:text-xl text-foreground/70 max-w-2xl lg:max-w-3xl mx-auto px-4 leading-relaxed">
                   {t('featuresSubtitle')}
                 </p>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-                <div className="group p-6 sm:p-8 rounded-2xl bg-gradient-to-br from-background to-background/50 border border-foreground/10 hover:border-foreground/20 backdrop-blur-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
+                <div className="group p-4 sm:p-6 lg:p-8 rounded-2xl bg-gradient-to-br from-background to-background/50 border border-foreground/10 hover:border-foreground/20 backdrop-blur-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
                   <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gradient-to-r from-blue-500 to-cyan-500 flex items-center justify-center mb-4 sm:mb-6 group-hover:scale-110 transition-transform">
                     <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
@@ -133,7 +131,7 @@ export default function Home() {
                   </p>
                 </div>
 
-                <div className="group p-6 sm:p-8 rounded-2xl bg-gradient-to-br from-background to-background/50 border border-foreground/10 hover:border-foreground/20 backdrop-blur-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
+                <div className="group p-4 sm:p-6 lg:p-8 rounded-2xl bg-gradient-to-br from-background to-background/50 border border-foreground/10 hover:border-foreground/20 backdrop-blur-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
                   <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center mb-4 sm:mb-6 group-hover:scale-110 transition-transform">
                     <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
@@ -145,7 +143,7 @@ export default function Home() {
                   </p>
                 </div>
 
-                <div className="group p-6 sm:p-8 rounded-2xl bg-gradient-to-br from-background to-background/50 border border-foreground/10 hover:border-foreground/20 backdrop-blur-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
+                <div className="group p-4 sm:p-6 lg:p-8 rounded-2xl bg-gradient-to-br from-background to-background/50 border border-foreground/10 hover:border-foreground/20 backdrop-blur-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
                   <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gradient-to-r from-emerald-500 to-teal-500 flex items-center justify-center mb-4 sm:mb-6 group-hover:scale-110 transition-transform">
                     <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
@@ -157,7 +155,7 @@ export default function Home() {
                   </p>
                 </div>
 
-                <div className="group p-6 sm:p-8 rounded-2xl bg-gradient-to-br from-background to-background/50 border border-foreground/10 hover:border-foreground/20 backdrop-blur-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
+                <div className="group p-4 sm:p-6 lg:p-8 rounded-2xl bg-gradient-to-br from-background to-background/50 border border-foreground/10 hover:border-foreground/20 backdrop-blur-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
                   <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gradient-to-r from-orange-500 to-yellow-500 flex items-center justify-center mb-4 sm:mb-6 group-hover:scale-110 transition-transform">
                     <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
@@ -169,7 +167,7 @@ export default function Home() {
                   </p>
                 </div>
 
-                <div className="group p-6 sm:p-8 rounded-2xl bg-gradient-to-br from-background to-background/50 border border-foreground/10 hover:border-foreground/20 backdrop-blur-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
+                <div className="group p-4 sm:p-6 lg:p-8 rounded-2xl bg-gradient-to-br from-background to-background/50 border border-foreground/10 hover:border-foreground/20 backdrop-blur-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
                   <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gradient-to-r from-indigo-500 to-blue-500 flex items-center justify-center mb-4 sm:mb-6 group-hover:scale-110 transition-transform">
                     <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
@@ -181,7 +179,7 @@ export default function Home() {
                   </p>
                 </div>
 
-                <div className="group p-6 sm:p-8 rounded-2xl bg-gradient-to-br from-background to-background/50 border border-foreground/10 hover:border-foreground/20 backdrop-blur-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
+                <div className="group p-4 sm:p-6 lg:p-8 rounded-2xl bg-gradient-to-br from-background to-background/50 border border-foreground/10 hover:border-foreground/20 backdrop-blur-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
                   <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gradient-to-r from-rose-500 to-pink-500 flex items-center justify-center mb-4 sm:mb-6 group-hover:scale-110 transition-transform">
                     <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192L5.636 18.364M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
@@ -914,9 +912,9 @@ export default function Home() {
                 <p className="text-sm text-foreground/60 mb-4">{t('dragToExplore')}</p>
               </div>
               
-              <DraggableCardContainer className="relative min-h-[500px] flex items-center justify-center">
-                <div className="relative grid grid-cols-2 gap-4 max-w-lg">
-                  <DraggableCardBody className="w-48 h-64 bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-800 dark:to-slate-900 border-8 border-white dark:border-slate-700 shadow-xl">
+              <DraggableCardContainer className="relative min-h-[400px] sm:min-h-[500px] flex items-center justify-center px-4">
+                <div className="relative grid grid-cols-2 gap-2 sm:gap-4 max-w-xs sm:max-w-lg">
+                  <DraggableCardBody className="w-32 h-40 sm:w-48 sm:h-64 bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-800 dark:to-slate-900 border-4 sm:border-8 border-white dark:border-slate-700 shadow-xl">
                     <div className="h-full w-full bg-gradient-to-br from-yellow-200 via-orange-200 to-pink-200 dark:from-yellow-900/50 dark:via-orange-900/50 dark:to-pink-900/50 rounded-sm flex flex-col">
                       <div className="flex-1 bg-gradient-to-br from-purple-400/20 to-blue-400/20 rounded-sm m-2 flex items-center justify-center">
                         <div className="text-center">
@@ -934,7 +932,7 @@ export default function Home() {
                     </div>
                   </DraggableCardBody>
 
-                  <DraggableCardBody className="w-48 h-64 bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-800 dark:to-slate-900 border-8 border-white dark:border-slate-700 shadow-xl">
+                  <DraggableCardBody className="w-32 h-40 sm:w-48 sm:h-64 bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-800 dark:to-slate-900 border-4 sm:border-8 border-white dark:border-slate-700 shadow-xl">
                     <div className="h-full w-full bg-gradient-to-br from-pink-200 via-purple-200 to-blue-200 dark:from-pink-900/50 dark:via-purple-900/50 dark:to-blue-900/50 rounded-sm flex flex-col">
                       <div className="flex-1 bg-gradient-to-br from-emerald-400/20 to-teal-400/20 rounded-sm m-2 flex items-center justify-center">
                         <div className="text-center">
@@ -952,7 +950,7 @@ export default function Home() {
                     </div>
                   </DraggableCardBody>
 
-                  <DraggableCardBody className="w-48 h-64 bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-800 dark:to-slate-900 border-8 border-white dark:border-slate-700 shadow-xl col-span-2 justify-self-center">
+                  <DraggableCardBody className="w-32 h-40 sm:w-48 sm:h-64 bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-800 dark:to-slate-900 border-4 sm:border-8 border-white dark:border-slate-700 shadow-xl col-span-2 justify-self-center">
                     <div className="h-full w-full bg-gradient-to-br from-orange-200 via-red-200 to-pink-200 dark:from-orange-900/50 dark:via-red-900/50 dark:to-pink-900/50 rounded-sm flex flex-col">
                       <div className="flex-1 bg-gradient-to-br from-yellow-400/20 to-orange-400/20 rounded-sm m-2 flex items-center justify-center">
                         <div className="text-center">
@@ -972,16 +970,16 @@ export default function Home() {
                 </div>
 
                 {/* Camera Interface Overlay */}
-                <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
-                  <div className="bg-black/80 backdrop-blur-sm rounded-2xl p-4 min-w-[280px]">
-                    <div className="text-center text-white mb-3">
-                      <div className="text-sm font-medium mb-1">{t('dayAfterReveal')}</div>
+                <div className="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 px-4 w-full max-w-xs sm:max-w-none sm:w-auto">
+                  <div className="bg-black/80 backdrop-blur-sm rounded-2xl p-3 sm:p-4 min-w-[240px] sm:min-w-[280px] mx-auto">
+                    <div className="text-center text-white mb-2 sm:mb-3">
+                      <div className="text-xs sm:text-sm font-medium mb-1">{t('dayAfterReveal')}</div>
                       <div className="text-xs text-white/70">{t('revealCountdown')} 8 {t('hours')}</div>
                     </div>
-                    <div className="flex items-center justify-center gap-4">
+                    <div className="flex items-center justify-center gap-2 sm:gap-4">
                       <div className="text-xs text-white/60">7/12 {t('photosTaken')}</div>
-                      <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center">
-                        <div className="w-4 h-4 rounded-full bg-white/40"></div>
+                      <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-white/20 flex items-center justify-center">
+                        <div className="w-3 h-3 sm:w-4 sm:h-4 rounded-full bg-white/40"></div>
                       </div>
                       <div className="text-xs text-white/60">5 {t('photosRemaining')}</div>
                     </div>
@@ -1195,7 +1193,7 @@ export default function Home() {
                       type="text"
                       id="firstName"
                       name="firstName"
-                      className="w-full px-4 py-3 rounded-xl border border-foreground/20 bg-background/50 focus:outline-none focus:ring-2 focus:ring-emerald-500/50 focus:border-transparent transition-all duration-200"
+                      className="w-full px-4 py-3 sm:py-4 rounded-xl border border-foreground/20 bg-background/50 focus:outline-none focus:ring-2 focus:ring-emerald-500/50 focus:border-transparent transition-all duration-200 mobile:touch-target"
                       placeholder="John"
                       required
                     />
@@ -1206,7 +1204,7 @@ export default function Home() {
                       type="text"
                       id="lastName"
                       name="lastName"
-                      className="w-full px-4 py-3 rounded-xl border border-foreground/20 bg-background/50 focus:outline-none focus:ring-2 focus:ring-emerald-500/50 focus:border-transparent transition-all duration-200"
+                      className="w-full px-4 py-3 sm:py-4 rounded-xl border border-foreground/20 bg-background/50 focus:outline-none focus:ring-2 focus:ring-emerald-500/50 focus:border-transparent transition-all duration-200 mobile:touch-target"
                       placeholder="Doe"
                       required
                     />
@@ -1256,7 +1254,7 @@ export default function Home() {
 
                 <button
                   type="submit"
-                  className="w-full bg-gradient-to-r from-emerald-600 to-blue-600 text-white px-6 py-4 rounded-xl font-medium hover:shadow-lg hover:scale-105 transition-all duration-200 gpu-accelerated flex items-center justify-center gap-2"
+                  className="w-full bg-gradient-to-r from-emerald-600 to-blue-600 text-white px-6 py-4 sm:py-5 rounded-xl font-medium hover:shadow-lg hover:scale-105 transition-all duration-200 gpu-accelerated flex items-center justify-center gap-2 mobile:touch-target"
                 >
                   {t('sendMessageBtn')}
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1324,7 +1322,7 @@ export default function Home() {
               <ul className="space-y-3 text-sm">
                 <li>
                   <a href="#features" className="text-foreground/70 hover:text-foreground hover:underline transition-colors">
-                    {t('features')}
+                    {t('footerFeatures')}
                   </a>
                 </li>
                 <li>

@@ -259,6 +259,41 @@ body {
   .mobile\:leading-relaxed {
     line-height: 1.6;
   }
+  
+  /* Better spacing for mobile */
+  .mobile\:px-4 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  .mobile\:py-3 {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+  }
+  
+  /* Optimize touch interactions */
+  .mobile\:active\:scale-95:active {
+    transform: scale(0.95);
+  }
+}
+
+/* Ultra-wide screen optimizations */
+@media (min-width: 1920px) {
+  .ultra-wide\:max-w-8xl {
+    max-width: 88rem;
+  }
+}
+
+/* Print optimizations */
+@media print {
+  .print\:hidden {
+    display: none;
+  }
+  
+  body {
+    font-size: 12pt;
+    line-height: 1.4;
+  }
 }
 
 /* Reduce motion for accessibility */
