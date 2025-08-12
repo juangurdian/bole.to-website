@@ -203,6 +203,62 @@ body {
     font-size: 1.875rem;
     line-height: 2.25rem;
   }
+  
+  .text-4xl {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+  
+  .text-5xl {
+    font-size: 3rem;
+    line-height: 1.1;
+  }
+  
+  .text-6xl {
+    font-size: 3.5rem;
+    line-height: 1.1;
+  }
+}
+
+/* Tablet optimizations */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .tablet\:px-8 {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  
+  .tablet\:py-6 {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+}
+
+/* Better mobile touch targets */
+@media (max-width: 768px) {
+  button,
+  [role="button"],
+  input[type="submit"],
+  input[type="button"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  .mobile\:touch-target {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* Improved mobile text readability */
+@media (max-width: 640px) {
+  .mobile\:text-base {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+  
+  .mobile\:leading-relaxed {
+    line-height: 1.6;
+  }
 }
 
 /* Reduce motion for accessibility */

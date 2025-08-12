@@ -2,9 +2,13 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { DraggableCardContainer, DraggableCardBody } from "@/components/DraggableCard";
+import { LanguageSwitcher } from "@/components/LanguageSwitcher";
+import { useTranslation } from "@/contexts/LanguageContext";
 import { useState, useEffect } from "react";
 
 export default function Home() {
+  const { t } = useTranslation();
+  
   return (
     <>
       <div className="min-h-screen bg-gradient-to-br from-background via-background to-background/95 relative" 
@@ -21,27 +25,29 @@ export default function Home() {
         </div>
 
         <div className="relative z-10" style={{ width: '100%' }}>
-          <header className="px-4 sm:px-6 py-4 sm:py-5 backdrop-blur-sm">
+          <header className="px-4 sm:px-6 lg:px-8 py-3 sm:py-4 lg:py-5 backdrop-blur-sm">
             <div className="mx-auto max-w-7xl flex items-center justify-between">
               <div className="flex items-center gap-2">
                 <span className="text-lg sm:text-xl lg:text-2xl font-bold tracking-tight bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent">bole.to</span>
               </div>
-              <nav className="hidden sm:flex items-center gap-4 lg:gap-6 text-sm">
-                <Link href="#features" className="hover:opacity-80 transition-opacity">Features</Link>
-                <Link href="#contact" className="hover:opacity-80 transition-opacity">Contact</Link>
+              <nav className="hidden sm:flex items-center gap-3 md:gap-4 lg:gap-6 text-sm">
+                <Link href="#features" className="hover:opacity-80 transition-opacity px-2 py-1 rounded-md hover:bg-foreground/5">{t('features')}</Link>
+                <Link href="#contact" className="hover:opacity-80 transition-opacity px-2 py-1 rounded-md hover:bg-foreground/5">{t('contact')}</Link>
+                <LanguageSwitcher />
                 <a
                   href="mailto:hello@bole.to"
-                  className="rounded-full bg-foreground text-background px-3 lg:px-4 py-2 text-xs lg:text-sm font-medium hover:scale-105 transition-transform duration-200 gpu-accelerated"
+                  className="rounded-full bg-foreground text-background px-3 md:px-4 py-2 text-xs md:text-sm font-medium hover:scale-105 transition-transform duration-200 gpu-accelerated mobile:touch-target"
                 >
-                  Get in touch
+                  {t('getInTouch')}
                 </a>
               </nav>
-              <div className="sm:hidden">
+              <div className="sm:hidden flex items-center gap-2">
+                <LanguageSwitcher />
                 <a
                   href="mailto:hello@bole.to"
-                  className="rounded-full bg-foreground text-background px-3 py-2 text-xs font-medium"
+                  className="rounded-full bg-foreground text-background px-3 py-2 text-xs font-medium mobile:touch-target"
                 >
-                  Contact
+                  {t('contact')}
                 </a>
               </div>
             </div>
@@ -51,22 +57,22 @@ export default function Home() {
             <div className="mx-auto max-w-7xl">
               <div className="inline-flex items-center rounded-full border border-foreground/20 bg-background/50 backdrop-blur-sm px-3 sm:px-4 py-2 text-xs mb-6 sm:mb-8 animate-fade-in-up shadow-lg">
                 <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse mr-2"></div>
-                <span className="text-foreground/80">Introducing</span>
+                <span className="text-foreground/80">{t('introducing')}</span>
                 <span className="mx-2 h-1 w-1 rounded-full bg-foreground/30" />
                 <span className="font-medium bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">bole.to</span>
               </div>
 
               <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight mb-4 sm:mb-6 animate-fade-in-up animation-delay-200 leading-tight">
                 <span className="bg-gradient-to-r from-foreground via-foreground/90 to-foreground bg-clip-text text-transparent block">
-                  Build with
+                  {t('buildWith')}
                 </span>
                 <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent animate-gradient block">
-                  confidence
+                  {t('confidence')}
                 </span>
               </h1>
               
               <p className="mt-6 sm:mt-8 text-base sm:text-lg lg:text-xl text-foreground/70 max-w-2xl lg:max-w-3xl mx-auto leading-relaxed animate-fade-in-up animation-delay-400 px-2">
-                We&apos;re crafting a modern platform at <span className="font-semibold text-foreground">bole.to</span>. Join the waitlist and be the first to know when we launch.
+                {t('heroCopy')}
               </p>
               
               <div className="mt-8 sm:mt-12 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center animate-fade-in-up animation-delay-600 px-2">
@@ -74,7 +80,7 @@ export default function Home() {
                   href="mailto:hello@bole.to?subject=Join%20the%20bole.to%20waitlist"
                   className="group inline-flex items-center justify-center rounded-full bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base font-medium hover:shadow-lg hover:scale-105 transition-all duration-200 gpu-accelerated"
                 >
-                  Join the waitlist
+                  {t('joinWaitlist')}
                   <svg className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform duration-200 gpu-accelerated" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                   </svg>
@@ -83,21 +89,21 @@ export default function Home() {
                   href="#features"
                   className="inline-flex items-center justify-center rounded-full border border-foreground/20 bg-background/50 backdrop-blur-sm px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base font-medium hover:bg-foreground/5 hover:scale-105 transition-all duration-300"
                 >
-                  Learn more
+                  {t('learnMore')}
                 </Link>
               </div>
 
               <div className="mt-12 sm:mt-16 flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-8 animate-fade-in-up animation-delay-800 px-4">
                 <div className="flex items-center gap-2 text-xs sm:text-sm text-foreground/60">
                   <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                  <span>In development</span>
+                  <span>{t('inDevelopment')}</span>
                 </div>
                 <div className="hidden sm:block w-px h-4 bg-foreground/20"></div>
                 <div className="flex items-center gap-2 text-xs sm:text-sm text-foreground/60">
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                   </svg>
-                  <span>Secure & reliable</span>
+                  <span>{t('secureReliable')}</span>
                 </div>
               </div>
             </div>
@@ -107,10 +113,10 @@ export default function Home() {
             <div className="mx-auto max-w-7xl">
               <div className="text-center mb-12 sm:mb-16">
                 <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight mb-3 sm:mb-4 bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent">
-                  Why choose bole.to?
+                  {t('whyChoose')}
                 </h2>
                 <p className="text-base sm:text-lg text-foreground/70 max-w-2xl mx-auto px-4">
-                  Built for the modern web with cutting-edge technology and user experience at the forefront.
+                  {t('featuresSubtitle')}
                 </p>
               </div>
 
@@ -121,9 +127,9 @@ export default function Home() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                     </svg>
                   </div>
-                  <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3 group-hover:text-blue-600 transition-colors">Lightning Fast</h3>
+                  <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3 group-hover:text-blue-600 transition-colors">{t('lightningFast')}</h3>
                   <p className="text-sm sm:text-base text-foreground/70 leading-relaxed">
-                    Built with performance in mind. Experience blazing-fast load times and smooth interactions across all devices.
+                    {t('lightningFastDesc')}
                   </p>
                 </div>
 
@@ -133,9 +139,9 @@ export default function Home() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                     </svg>
                   </div>
-                  <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3 group-hover:text-purple-600 transition-colors">Secure by Design</h3>
+                  <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3 group-hover:text-purple-600 transition-colors">{t('secureByDesign')}</h3>
                   <p className="text-sm sm:text-base text-foreground/70 leading-relaxed">
-                    Enterprise-grade security measures protect your data with end-to-end encryption and advanced threat detection.
+                    {t('secureByDesignDesc')}
                   </p>
                 </div>
 
@@ -145,9 +151,9 @@ export default function Home() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                     </svg>
                   </div>
-                  <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3 group-hover:text-emerald-600 transition-colors">User-Centric</h3>
+                  <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3 group-hover:text-emerald-600 transition-colors">{t('userCentric')}</h3>
                   <p className="text-sm sm:text-base text-foreground/70 leading-relaxed">
-                    Every feature is crafted with your needs in mind, delivering an intuitive experience that just works.
+                    {t('userCentricDesc')}
                   </p>
                 </div>
 
@@ -157,9 +163,9 @@ export default function Home() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
                     </svg>
                   </div>
-                  <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3 group-hover:text-orange-600 transition-colors">Seamless Integration</h3>
+                  <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3 group-hover:text-orange-600 transition-colors">{t('seamlessIntegration')}</h3>
                   <p className="text-sm sm:text-base text-foreground/70 leading-relaxed">
-                    Connect with your existing tools and workflows through our comprehensive API and integrations.
+                    {t('seamlessIntegrationDesc')}
                   </p>
                 </div>
 
@@ -169,9 +175,9 @@ export default function Home() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                     </svg>
                   </div>
-                  <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3 group-hover:text-indigo-600 transition-colors">Innovation First</h3>
+                  <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3 group-hover:text-indigo-600 transition-colors">{t('innovationFirst')}</h3>
                   <p className="text-sm sm:text-base text-foreground/70 leading-relaxed">
-                    Stay ahead with cutting-edge features powered by the latest technology and industry best practices.
+                    {t('innovationFirstDesc')}
                   </p>
                 </div>
 
@@ -181,9 +187,9 @@ export default function Home() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192L5.636 18.364M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
                     </svg>
                   </div>
-                  <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3 group-hover:text-rose-600 transition-colors">24/7 Support</h3>
+                  <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3 group-hover:text-rose-600 transition-colors">{t('support247')}</h3>
                   <p className="text-sm sm:text-base text-foreground/70 leading-relaxed">
-                    Our dedicated support team is always here to help you succeed, whenever you need assistance.
+                    {t('support247Desc')}
                   </p>
                 </div>
               </div>
@@ -195,7 +201,7 @@ export default function Home() {
                     <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-gradient-to-r from-purple-400 to-purple-600"></div>
                     <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-gradient-to-r from-emerald-400 to-emerald-600"></div>
                   </div>
-                  <span className="text-xs sm:text-sm font-medium text-foreground/80">Trusted by developers worldwide</span>
+                  <span className="text-xs sm:text-sm font-medium text-foreground/80">{t('trustedBy')}</span>
                 </div>
               </div>
             </div>
@@ -214,19 +220,19 @@ export default function Home() {
           <div className="text-center mb-12 sm:mb-16 lg:mb-20">
             <div className="inline-flex items-center rounded-full border border-purple-500/20 bg-purple-500/10 backdrop-blur-sm px-3 sm:px-4 py-2 text-xs sm:text-sm mb-4 sm:mb-6">
               <div className="w-2 h-2 bg-purple-500 rounded-full animate-pulse mr-2"></div>
-              <span className="text-purple-700 dark:text-purple-300 font-medium">Social Features</span>
+              <span className="text-purple-700 dark:text-purple-300 font-medium">{t('socialFeatures')}</span>
             </div>
             
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-4 sm:mb-6 px-4">
               <span className="bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 bg-clip-text text-transparent">
-                Build the hype
+                {t('buildHype')}
               </span>
               <br />
-              <span className="text-foreground">before the drop</span>
+              <span className="text-foreground">{t('beforeTheDrop')}</span>
             </h2>
             
             <p className="text-base sm:text-lg lg:text-xl text-foreground/70 max-w-3xl mx-auto px-4">
-              Create buzz and engagement long before your event starts. Connect artists, attendees, and organizers in one vibrant community.
+              {t('socialSubtitle')}
             </p>
           </div>
 
@@ -240,8 +246,8 @@ export default function Home() {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="text-lg sm:text-xl font-semibold mb-1 sm:mb-2">Live Event Chat</h3>
-                    <p className="text-sm sm:text-base text-foreground/70">Share excitement, coordinate meetups, and connect with fellow attendees through real-time messaging.</p>
+                    <h3 className="text-lg sm:text-xl font-semibold mb-1 sm:mb-2">{t('liveEventChat')}</h3>
+                    <p className="text-sm sm:text-base text-foreground/70">{t('liveEventChatDesc')}</p>
                   </div>
                 </div>
 
@@ -252,8 +258,8 @@ export default function Home() {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="text-lg sm:text-xl font-semibold mb-1 sm:mb-2">Attendee Discovery</h3>
-                    <p className="text-sm sm:text-base text-foreground/70">See who&apos;s coming, connect with friends, and discover new people who share your music taste.</p>
+                    <h3 className="text-lg sm:text-xl font-semibold mb-1 sm:mb-2">{t('attendeeDiscovery')}</h3>
+                    <p className="text-sm sm:text-base text-foreground/70">{t('attendeeDiscoveryDesc')}</p>
                   </div>
                 </div>
 
@@ -264,8 +270,8 @@ export default function Home() {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="text-lg sm:text-xl font-semibold mb-1 sm:mb-2">Exclusive DJ Content</h3>
-                    <p className="text-sm sm:text-base text-foreground/70">DJs share exclusive mixes, unreleased tracks, and behind-the-scenes content to build anticipation.</p>
+                    <h3 className="text-lg sm:text-xl font-semibold mb-1 sm:mb-2">{t('exclusiveDjContent')}</h3>
+                    <p className="text-sm sm:text-base text-foreground/70">{t('exclusiveDjContentDesc')}</p>
                   </div>
                 </div>
 
@@ -276,8 +282,8 @@ export default function Home() {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="text-lg sm:text-xl font-semibold mb-1 sm:mb-2">Live Polls & Feedback</h3>
-                    <p className="text-sm sm:text-base text-foreground/70">Organizers create polls for song requests, event preferences, and gather real-time feedback from the community.</p>
+                    <h3 className="text-lg sm:text-xl font-semibold mb-1 sm:mb-2">{t('livePolls')}</h3>
+                    <p className="text-sm sm:text-base text-foreground/70">{t('livePollsDesc')}</p>
                   </div>
                 </div>
               </div>
@@ -292,7 +298,7 @@ export default function Home() {
                     <h4 className="font-semibold text-base sm:text-lg">Midnight Rave 2024</h4>
                     <div className="flex items-center gap-2">
                       <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                      <span className="text-xs sm:text-sm text-foreground/60">Live</span>
+                      <span className="text-xs sm:text-sm text-foreground/60">{t('live')}</span>
                     </div>
                   </div>
                   
@@ -300,16 +306,16 @@ export default function Home() {
                     <div className="flex items-start gap-2 sm:gap-3 animate-fade-in-up animation-delay-200">
                       <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-gradient-to-r from-blue-400 to-purple-400 flex-shrink-0"></div>
                       <div className="bg-foreground/5 rounded-2xl rounded-tl-none p-2 sm:p-3 flex-1">
-                        <div className="text-xs text-foreground/60 mb-1">DJ Nexus • 2m ago</div>
-                        <div className="text-xs sm:text-sm">Just dropped an exclusive preview of tonight&apos;s closing track! 🔥</div>
+                        <div className="text-xs text-foreground/60 mb-1">{t('djNexus')} • 2m ago</div>
+                        <div className="text-xs sm:text-sm">{t('djNexusMessage')}</div>
                       </div>
                     </div>
 
                     <div className="flex items-start gap-2 sm:gap-3 animate-fade-in-up animation-delay-400">
                       <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-gradient-to-r from-emerald-400 to-teal-400 flex-shrink-0"></div>
                       <div className="bg-blue-500/10 rounded-2xl rounded-tl-none p-2 sm:p-3 flex-1">
-                        <div className="text-xs text-foreground/60 mb-1">Sarah_beats • 5m ago</div>
-                        <div className="text-xs sm:text-sm">Can&apos;t wait! Who else is going solo? Let&apos;s meet up! 🎵</div>
+                        <div className="text-xs text-foreground/60 mb-1">{t('sarahBeats')} • 5m ago</div>
+                        <div className="text-xs sm:text-sm">{t('sarahMessage')}</div>
                         <div className="flex items-center gap-1 sm:gap-2 mt-2">
                           <button className="text-xs bg-blue-500/20 hover:bg-blue-500/30 px-2 py-1 rounded-full transition-colors">❤️ 12</button>
                           <button className="text-xs text-foreground/60 hover:text-foreground transition-colors">Reply</button>
@@ -320,19 +326,19 @@ export default function Home() {
                     <div className="bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded-2xl p-3 sm:p-4 border border-purple-500/20 animate-fade-in-up animation-delay-600">
                       <div className="flex items-center gap-2 mb-2">
                         <div className="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-gradient-to-r from-purple-500 to-pink-500"></div>
-                        <span className="text-xs sm:text-sm font-medium">Event Poll</span>
+                        <span className="text-xs sm:text-sm font-medium">{t('eventPoll')}</span>
                       </div>
-                      <div className="text-xs sm:text-sm mb-3">What genre should dominate the main stage?</div>
+                      <div className="text-xs sm:text-sm mb-3">{t('pollQuestion')}</div>
                       <div className="space-y-2">
                         <div className="flex items-center justify-between">
-                          <span className="text-xs">Techno</span>
+                          <span className="text-xs">{t('techno')}</span>
                           <span className="text-xs text-foreground/60">45%</span>
                         </div>
                         <div className="w-full bg-foreground/10 rounded-full h-2">
                           <div className="bg-gradient-to-r from-purple-500 to-pink-500 h-2 rounded-full w-[45%] animate-scale-in"></div>
                         </div>
                         <div className="flex items-center justify-between">
-                          <span className="text-xs">House</span>
+                          <span className="text-xs">{t('house')}</span>
                           <span className="text-xs text-foreground/60">35%</span>
                         </div>
                         <div className="w-full bg-foreground/10 rounded-full h-2">
@@ -348,7 +354,7 @@ export default function Home() {
                         <div className="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-gradient-to-r from-green-400 to-emerald-400 border border-background"></div>
                         <div className="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-foreground/20 border border-background flex items-center justify-center text-[10px] font-medium">+</div>
                       </div>
-                      <span className="text-xs">247 people are hyped for this event</span>
+                      <span className="text-xs">{t('peopleHyped')}</span>
                     </div>
                   </div>
                 </div>
@@ -356,7 +362,7 @@ export default function Home() {
                 <div className="flex items-center gap-2 sm:gap-3">
                   <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-gradient-to-r from-orange-400 to-red-400"></div>
                   <div className="flex-1 bg-foreground/10 rounded-full px-3 sm:px-4 py-2">
-                    <div className="text-xs sm:text-sm text-foreground/60 animate-pulse">Share your excitement...</div>
+                    <div className="text-xs sm:text-sm text-foreground/60 animate-pulse">{t('shareExcitement')}</div>
                   </div>
                   <button className="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center">
                     <svg className="w-3 h-3 sm:w-4 sm:h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -376,19 +382,19 @@ export default function Home() {
           <div className="text-center mb-16 sm:mb-20">
             <div className="inline-flex items-center rounded-full border border-blue-500/20 bg-blue-500/10 backdrop-blur-sm px-4 py-2 text-xs sm:text-sm mb-6">
               <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse mr-2"></div>
-              <span className="text-blue-700 dark:text-blue-300 font-medium">For Organizers</span>
+              <span className="text-blue-700 dark:text-blue-300 font-medium">{t('forOrganizers')}</span>
             </div>
             
             <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold tracking-tight mb-6">
-              <span className="text-foreground">Operate your event</span>
+              <span className="text-foreground">{t('operateEvent')}</span>
               <br />
               <span className="bg-gradient-to-r from-blue-600 via-cyan-600 to-teal-600 bg-clip-text text-transparent">
-                from start to finish
+                {t('startToFinish')}
               </span>
             </h2>
             
             <p className="text-lg sm:text-xl text-foreground/70 max-w-4xl mx-auto leading-relaxed">
-              Create your event in minutes, sell in any currency, control access with offline QR scanning, and track everything in real-time. Add the promoter suite to sell more without losing control.
+              {t('organizersSubtitle')}
             </p>
           </div>
 
@@ -401,8 +407,8 @@ export default function Home() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                   </svg>
                 </div>
-                <h3 className="text-xl font-semibold mb-3 group-hover:text-blue-600 transition-colors">Create</h3>
-                <p className="text-foreground/70 text-sm leading-relaxed">Cover image, date and venue, capacity and categories. SEO-ready public page ready to share.</p>
+                <h3 className="text-xl font-semibold mb-3 group-hover:text-blue-600 transition-colors">{t('create')}</h3>
+                <p className="text-foreground/70 text-sm leading-relaxed">{t('createDesc')}</p>
               </div>
             </div>
 
@@ -414,8 +420,8 @@ export default function Home() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 110 4v3a2 2 0 002 2h14a2 2 0 002-2v-3a2 2 0 110-4V7a2 2 0 00-2-2H5z" />
                   </svg>
                 </div>
-                <h3 className="text-xl font-semibold mb-3 group-hover:text-cyan-600 transition-colors">Configure Tickets</h3>
-                <p className="text-foreground/70 text-sm leading-relaxed">General, VIP, presale, combos and coupons. Quotas, schedules, and price tiers.</p>
+                <h3 className="text-xl font-semibold mb-3 group-hover:text-cyan-600 transition-colors">{t('configureTickets')}</h3>
+                <p className="text-foreground/70 text-sm leading-relaxed">{t('configureTicketsDesc')}</p>
               </div>
             </div>
 
@@ -427,8 +433,8 @@ export default function Home() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
                   </svg>
                 </div>
-                <h3 className="text-xl font-semibold mb-3 group-hover:text-emerald-600 transition-colors">Collect Payment</h3>
-                <p className="text-foreground/70 text-sm leading-relaxed">Checkout in multiple currencies, clear reconciliation, optional refunds and transfers.</p>
+                <h3 className="text-xl font-semibold mb-3 group-hover:text-emerald-600 transition-colors">{t('collectPayment')}</h3>
+                <p className="text-foreground/70 text-sm leading-relaxed">{t('collectPaymentDesc')}</p>
               </div>
             </div>
 
@@ -440,8 +446,8 @@ export default function Home() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1zm12 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z" />
                   </svg>
                 </div>
-                <h3 className="text-xl font-semibold mb-3 group-hover:text-orange-600 transition-colors">Operate at Door</h3>
-                <p className="text-foreground/70 text-sm leading-relaxed">Scanner on your phone (iOS/Android), millisecond validation, real offline mode, multiple checkpoints, staff roles.</p>
+                <h3 className="text-xl font-semibold mb-3 group-hover:text-orange-600 transition-colors">{t('operateAtDoor')}</h3>
+                <p className="text-foreground/70 text-sm leading-relaxed">{t('operateAtDoorDesc')}</p>
               </div>
             </div>
           </div>
@@ -459,52 +465,52 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
-                Access that never fails,
+                {t('accessTitle')}
                 <br />
-                <span className="text-green-400">with or without internet</span>
+                <span className="text-green-400">{t('withOrWithoutInternet')}</span>
               </h2>
               
               <div className="space-y-4 mb-8">
                 <div className="flex items-start gap-3">
                   <div className="w-2 h-2 bg-green-400 rounded-full mt-2 flex-shrink-0"></div>
                   <div>
-                    <div className="font-medium">QR without signal:</div>
-                    <div className="text-slate-300 text-sm">Ticket list pre-loaded on device</div>
+                    <div className="font-medium">{t('qrWithoutSignal')}</div>
+                    <div className="text-slate-300 text-sm">{t('qrDesc')}</div>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <div className="w-2 h-2 bg-green-400 rounded-full mt-2 flex-shrink-0"></div>
                   <div>
-                    <div className="font-medium">Immediate local validation</div>
-                    <div className="text-slate-300 text-sm">Auto-sync when network returns</div>
+                    <div className="font-medium">{t('immediateValidation')}</div>
+                    <div className="text-slate-300 text-sm">{t('validationDesc')}</div>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <div className="w-2 h-2 bg-green-400 rounded-full mt-2 flex-shrink-0"></div>
                   <div>
-                    <div className="font-medium">Duplicate detection with alerts</div>
-                    <div className="text-slate-300 text-sm">Time and door of first check-in</div>
+                    <div className="font-medium">{t('duplicateDetection')}</div>
+                    <div className="text-slate-300 text-sm">{t('duplicateDesc')}</div>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <div className="w-2 h-2 bg-green-400 rounded-full mt-2 flex-shrink-0"></div>
                   <div>
-                    <div className="font-medium">Manual check-in by name/email</div>
-                    <div className="text-slate-300 text-sm">If QR is damaged or missing</div>
+                    <div className="font-medium">{t('manualCheckin')}</div>
+                    <div className="text-slate-300 text-sm">{t('manualDesc')}</div>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <div className="w-2 h-2 bg-green-400 rounded-full mt-2 flex-shrink-0"></div>
                   <div>
-                    <div className="font-medium">Multi-door and roles</div>
-                    <div className="text-slate-300 text-sm">Multiple scanners in parallel, staff permissions</div>
+                    <div className="font-medium">{t('multiDoor')}</div>
+                    <div className="text-slate-300 text-sm">{t('multiDoorDesc')}</div>
                   </div>
                 </div>
               </div>
               
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-slate-700/50 rounded-full text-sm">
                 <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                <span className="text-slate-300">Tested on high-traffic events. If network fails, access continues.</span>
+                <span className="text-slate-300">{t('accessNote')}</span>
               </div>
             </div>
 
@@ -519,7 +525,7 @@ export default function Home() {
                     <div className="text-white font-semibold">Midnight Rave Scanner</div>
                     <div className="flex items-center gap-2">
                       <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse"></div>
-                      <span className="text-slate-400 text-xs">No Internet</span>
+                      <span className="text-slate-400 text-xs">{t('noInternet')}</span>
                     </div>
                   </div>
                   
@@ -527,7 +533,7 @@ export default function Home() {
                     <div className="bg-green-500/20 border border-green-500/30 rounded-xl p-3">
                       <div className="flex items-center justify-between">
                         <div>
-                          <div className="text-green-400 font-medium text-sm">✓ VALID ENTRY</div>
+                          <div className="text-green-400 font-medium text-sm">{t('validEntry')}</div>
                           <div className="text-slate-300 text-xs">Sarah Johnson • VIP Ticket</div>
                         </div>
                         <div className="text-green-400 text-2xl">✓</div>
@@ -537,8 +543,8 @@ export default function Home() {
                     <div className="bg-red-500/20 border border-red-500/30 rounded-xl p-3">
                       <div className="flex items-center justify-between">
                         <div>
-                          <div className="text-red-400 font-medium text-sm">✗ ALREADY USED</div>
-                          <div className="text-slate-300 text-xs">Mike Chen • Used at Door A, 8:45 PM</div>
+                          <div className="text-red-400 font-medium text-sm">{t('alreadyUsed')}</div>
+                          <div className="text-slate-300 text-xs">Mike Chen • {t('usedAt')}</div>
                         </div>
                         <div className="text-red-400 text-2xl">✗</div>
                       </div>
@@ -551,7 +557,7 @@ export default function Home() {
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
                     </svg>
-                    <span>Scanned 247 / 500 tickets</span>
+                    <span>{t('scannedTickets')}</span>
                   </div>
                 </div>
               </div>
@@ -566,12 +572,12 @@ export default function Home() {
           <div className="text-center mb-16 sm:mb-20">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
               <span className="bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent">
-                Sell more
+                {t('sellMore')}
               </span>
-              <span className="text-foreground"> with your promoter team</span>
+              <span className="text-foreground">{t('withPromoterTeam')}</span>
             </h2>
             <p className="text-lg sm:text-xl text-foreground/70 max-w-3xl mx-auto">
-              Built-in promoter management with unique links, tiered commissions, and live leaderboards. Scale your sales without losing control.
+              {t('promotersSubtitle')}
             </p>
           </div>
 
@@ -582,8 +588,8 @@ export default function Home() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold mb-3">Links & Codes</h3>
-              <p className="text-foreground/70 text-sm mb-4">Unique UTM links, personal codes and QR codes for each promoter to distribute and track.</p>
+              <h3 className="text-xl font-semibold mb-3">{t('linksAndCodes')}</h3>
+              <p className="text-foreground/70 text-sm mb-4">{t('linksDesc')}</p>
               <div className="bg-foreground/5 rounded-lg p-3 text-xs font-mono">
                 bole.to/event/rave24?ref=sarah_promo
               </div>
@@ -595,8 +601,8 @@ export default function Home() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold mb-3">Commissions</h3>
-              <p className="text-foreground/70 text-sm mb-4">Tiered commission rates by volume, milestone bonuses, and automated payout calculations.</p>
+              <h3 className="text-xl font-semibold mb-3">{t('commissions')}</h3>
+              <p className="text-foreground/70 text-sm mb-4">{t('commissionsDesc')}</p>
               <div className="space-y-2">
                 <div className="flex justify-between text-xs">
                   <span>1-50 tickets: 5%</span>
@@ -619,8 +625,8 @@ export default function Home() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v4a2 2 0 01-2 2h-2a2 2 0 00-2-2z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold mb-3">Leaderboard</h3>
-              <p className="text-foreground/70 text-sm mb-4">Real-time rankings by sales, conversion rates, and attributed revenue to keep competition alive.</p>
+              <h3 className="text-xl font-semibold mb-3">{t('leaderboard')}</h3>
+              <p className="text-foreground/70 text-sm mb-4">{t('leaderboardDesc')}</p>
               <div className="space-y-2">
                 <div className="flex items-center gap-2 text-xs">
                   <span>🥇</span>
@@ -642,19 +648,19 @@ export default function Home() {
           </div>
 
           <div className="bg-gradient-to-r from-orange-500/10 to-red-500/10 rounded-2xl p-6 border border-orange-500/20">
-            <h4 className="font-semibold mb-4">Best Practices</h4>
+            <h4 className="font-semibold mb-4">{t('bestPractices')}</h4>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
               <div className="flex items-start gap-2">
                 <div className="w-1.5 h-1.5 bg-orange-500 rounded-full mt-2 flex-shrink-0"></div>
-                <span className="text-foreground/70">Set weekly targets with mini-bonuses per milestone</span>
+                <span className="text-foreground/70">{t('practice1')}</span>
               </div>
               <div className="flex items-start gap-2">
                 <div className="w-1.5 h-1.5 bg-orange-500 rounded-full mt-2 flex-shrink-0"></div>
-                <span className="text-foreground/70">Limit codes to key categories (e.g. early bird)</span>
+                <span className="text-foreground/70">{t('practice2')}</span>
               </div>
               <div className="flex items-start gap-2">
                 <div className="w-1.5 h-1.5 bg-orange-500 rounded-full mt-2 flex-shrink-0"></div>
-                <span className="text-foreground/70">Display live rankings to maintain competitive energy</span>
+                <span className="text-foreground/70">{t('practice3')}</span>
               </div>
             </div>
           </div>
@@ -666,32 +672,32 @@ export default function Home() {
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6">
           <div className="text-center mb-16 sm:mb-20">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
-              <span className="text-foreground">Metrics that </span>
+              <span className="text-foreground">{t('metricsThatMatter')} </span>
               <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                actually matter
+                {t('actuallyMatter')}
               </span>
             </h2>
             <p className="text-lg sm:text-xl text-foreground/70 max-w-3xl mx-auto">
-              Real-time insights into sales performance, attendee engagement, and operational efficiency. Make data-driven decisions for your events.
+              {t('metricsSubtitle')}
             </p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
             <div className="bg-gradient-to-br from-background/80 to-background/40 backdrop-blur-optimized rounded-2xl border border-foreground/10 p-6 text-center gpu-accelerated">
               <div className="text-3xl font-bold text-blue-600 mb-2">1,247</div>
-              <div className="text-sm text-foreground/60 mb-1">Tickets Sold</div>
+              <div className="text-sm text-foreground/60 mb-1">{t('ticketsSold')}</div>
               <div className="text-xs text-green-600">↗ +23% vs last event</div>
             </div>
             
             <div className="bg-gradient-to-br from-background/80 to-background/40 backdrop-blur-optimized rounded-2xl border border-foreground/10 p-6 text-center gpu-accelerated">
               <div className="text-3xl font-bold text-purple-600 mb-2">68%</div>
-              <div className="text-sm text-foreground/60 mb-1">Conversion Rate</div>
+              <div className="text-sm text-foreground/60 mb-1">{t('conversionRate')}</div>
               <div className="text-xs text-green-600">↗ +12% this month</div>
             </div>
             
             <div className="bg-gradient-to-br from-background/80 to-background/40 backdrop-blur-optimized rounded-2xl border border-foreground/10 p-6 text-center gpu-accelerated">
               <div className="text-3xl font-bold text-emerald-600 mb-2">$89K</div>
-              <div className="text-sm text-foreground/60 mb-1">Net Revenue</div>
+              <div className="text-sm text-foreground/60 mb-1">{t('netRevenue')}</div>
               <div className="text-xs text-green-600">↗ +34% growth</div>
             </div>
             
@@ -700,22 +706,22 @@ export default function Home() {
                 <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
               </div>
               <div className="text-3xl font-bold text-orange-600 mb-2">247</div>
-              <div className="text-sm text-foreground/60 mb-1">Live Check-ins</div>
-              <div className="text-xs text-blue-600">Real-time</div>
+              <div className="text-sm text-foreground/60 mb-1">{t('liveCheckins')}</div>
+              <div className="text-xs text-blue-600">{t('realTime')}</div>
             </div>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             <div className="bg-gradient-to-br from-background/80 to-background/40 backdrop-blur-optimized rounded-2xl border border-foreground/10 p-6 gpu-accelerated">
               <div className="flex items-center justify-between mb-4">
-                <h4 className="font-semibold">Sales by Channel</h4>
-                <div className="text-xs text-foreground/60">Last 7 days</div>
+                <h4 className="font-semibold">{t('salesByChannel')}</h4>
+                <div className="text-xs text-foreground/60">{t('lastDays')}</div>
               </div>
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2">
                     <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
-                    <span className="text-sm">Direct</span>
+                    <span className="text-sm">{t('direct')}</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <div className="w-24 bg-foreground/10 rounded-full h-2">
@@ -727,7 +733,7 @@ export default function Home() {
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2">
                     <div className="w-3 h-3 bg-purple-500 rounded-full"></div>
-                    <span className="text-sm">Instagram</span>
+                    <span className="text-sm">{t('instagram')}</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <div className="w-24 bg-foreground/10 rounded-full h-2">
@@ -739,7 +745,7 @@ export default function Home() {
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2">
                     <div className="w-3 h-3 bg-emerald-500 rounded-full"></div>
-                    <span className="text-sm">Promoters</span>
+                    <span className="text-sm">{t('promoters')}</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <div className="w-24 bg-foreground/10 rounded-full h-2">
@@ -753,8 +759,8 @@ export default function Home() {
 
             <div className="bg-gradient-to-br from-background/80 to-background/40 backdrop-blur-optimized rounded-2xl border border-foreground/10 p-6 gpu-accelerated">
               <div className="flex items-center justify-between mb-4">
-                <h4 className="font-semibold">Top Promoters</h4>
-                <div className="text-xs text-foreground/60">This month</div>
+                <h4 className="font-semibold">{t('topPromoters')}</h4>
+                <div className="text-xs text-foreground/60">{t('thisMonth')}</div>
               </div>
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
@@ -803,13 +809,193 @@ export default function Home() {
           <div className="mt-16 text-center">
             <div className="inline-flex flex-col sm:flex-row gap-4">
               <button className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full font-medium hover:shadow-lg hover:scale-105 transition-all duration-300">
-                Create My Event
+                {t('createMyEvent')}
               </button>
               <button className="px-8 py-4 border border-foreground/20 rounded-full font-medium hover:bg-foreground/5 hover:scale-105 transition-all duration-300">
-                Request Demo
+                {t('requestDemo')}
               </button>
             </div>
-            <p className="text-xs text-foreground/60 mt-4">Works on iOS/Android. No extra hardware needed.</p>
+            <p className="text-xs text-foreground/60 mt-4">{t('worksOnMobile')}</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-slate-50 via-purple-500/5 to-pink-500/5 dark:from-slate-900/50 dark:via-purple-500/5 dark:to-pink-500/5 overflow-hidden" 
+        style={{ width: '100vw', margin: 0, padding: 0, paddingTop: '4rem', paddingBottom: '6rem' }}>
+        <div className="absolute inset-0">
+          <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-r from-yellow-400/20 to-orange-400/20 rounded-full blur-3xl animate-pulse-slow"></div>
+          <div className="absolute bottom-32 right-20 w-40 h-40 bg-gradient-to-r from-pink-400/20 to-purple-400/20 rounded-full blur-3xl animate-float"></div>
+          <div className="absolute top-1/2 left-1/4 w-24 h-24 bg-gradient-to-r from-cyan-400/20 to-blue-400/20 rounded-full blur-2xl animate-float-delayed"></div>
+        </div>
+
+        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6">
+          <div className="text-center mb-16 sm:mb-20">
+            <div className="inline-flex items-center rounded-full border border-yellow-500/20 bg-yellow-500/10 backdrop-blur-sm px-3 sm:px-4 py-2 text-xs sm:text-sm mb-6">
+              <div className="w-2 h-2 bg-yellow-500 rounded-full animate-pulse mr-2"></div>
+              <span className="text-yellow-700 dark:text-yellow-300 font-medium">{t('cameraFeatures')}</span>
+            </div>
+            
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold tracking-tight mb-4 sm:mb-6">
+              <span className="text-foreground">{t('captureTheMoment')}</span>
+              <br />
+              <span className="bg-gradient-to-r from-yellow-600 via-orange-600 to-pink-600 bg-clip-text text-transparent animate-gradient">
+                {t('revealTomorrow')}
+              </span>
+            </h2>
+            
+            <p className="text-base sm:text-lg lg:text-xl text-foreground/70 max-w-4xl mx-auto leading-relaxed">
+              {t('cameraSubtitle')}
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-20">
+            <div className="space-y-6 lg:space-y-8">
+              <div className="bg-gradient-to-br from-background/80 to-background/40 backdrop-blur-sm rounded-2xl border border-foreground/10 p-6 lg:p-8 hover:border-yellow-500/20 transition-all duration-300 hover:shadow-lg group">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-r from-yellow-500 to-orange-500 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-200">
+                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold mb-2 group-hover:text-yellow-600 transition-colors">{t('disposableStyle')}</h3>
+                    <p className="text-foreground/70 text-sm">{t('disposableStyleDesc')}</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-gradient-to-br from-background/80 to-background/40 backdrop-blur-sm rounded-2xl border border-foreground/10 p-6 lg:p-8 hover:border-pink-500/20 transition-all duration-300 hover:shadow-lg group">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-r from-pink-500 to-purple-500 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-200">
+                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold mb-2 group-hover:text-pink-600 transition-colors">{t('autoReveal')}</h3>
+                    <p className="text-foreground/70 text-sm">{t('autoRevealDesc')}</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-gradient-to-br from-background/80 to-background/40 backdrop-blur-sm rounded-2xl border border-foreground/10 p-6 lg:p-8 hover:border-blue-500/20 transition-all duration-300 hover:shadow-lg group">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-r from-blue-500 to-cyan-500 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-200">
+                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold mb-2 group-hover:text-blue-600 transition-colors">{t('sharedGallery')}</h3>
+                    <p className="text-foreground/70 text-sm">{t('sharedGalleryDesc')}</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-gradient-to-br from-background/80 to-background/40 backdrop-blur-sm rounded-2xl border border-foreground/10 p-6 lg:p-8 hover:border-emerald-500/20 transition-all duration-300 hover:shadow-lg group">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-r from-emerald-500 to-teal-500 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-200">
+                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold mb-2 group-hover:text-emerald-600 transition-colors">{t('moderationIncluded')}</h3>
+                    <p className="text-foreground/70 text-sm">{t('moderationIncludedDesc')}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="relative">
+              <div className="text-center mb-8">
+                <h3 className="text-2xl font-semibold mb-2 text-foreground">{t('eventGallery')}</h3>
+                <p className="text-sm text-foreground/60 mb-4">{t('dragToExplore')}</p>
+              </div>
+              
+              <DraggableCardContainer className="relative min-h-[500px] flex items-center justify-center">
+                <div className="relative grid grid-cols-2 gap-4 max-w-lg">
+                  <DraggableCardBody className="w-48 h-64 bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-800 dark:to-slate-900 border-8 border-white dark:border-slate-700 shadow-xl">
+                    <div className="h-full w-full bg-gradient-to-br from-yellow-200 via-orange-200 to-pink-200 dark:from-yellow-900/50 dark:via-orange-900/50 dark:to-pink-900/50 rounded-sm flex flex-col">
+                      <div className="flex-1 bg-gradient-to-br from-purple-400/20 to-blue-400/20 rounded-sm m-2 flex items-center justify-center">
+                        <div className="text-center">
+                          <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-2">
+                            <svg className="w-6 h-6 text-white/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                            </svg>
+                          </div>
+                          <div className="text-xs text-white/80 font-medium">DJ Set Vibes</div>
+                        </div>
+                      </div>
+                      <div className="bg-white dark:bg-slate-800 p-2 rounded-b-sm">
+                        <div className="text-xs text-foreground/60">23:45 PM</div>
+                      </div>
+                    </div>
+                  </DraggableCardBody>
+
+                  <DraggableCardBody className="w-48 h-64 bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-800 dark:to-slate-900 border-8 border-white dark:border-slate-700 shadow-xl">
+                    <div className="h-full w-full bg-gradient-to-br from-pink-200 via-purple-200 to-blue-200 dark:from-pink-900/50 dark:via-purple-900/50 dark:to-blue-900/50 rounded-sm flex flex-col">
+                      <div className="flex-1 bg-gradient-to-br from-emerald-400/20 to-teal-400/20 rounded-sm m-2 flex items-center justify-center">
+                        <div className="text-center">
+                          <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-2">
+                            <svg className="w-6 h-6 text-white/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3" />
+                            </svg>
+                          </div>
+                          <div className="text-xs text-white/80 font-medium">Dance Floor</div>
+                        </div>
+                      </div>
+                      <div className="bg-white dark:bg-slate-800 p-2 rounded-b-sm">
+                        <div className="text-xs text-foreground/60">01:20 AM</div>
+                      </div>
+                    </div>
+                  </DraggableCardBody>
+
+                  <DraggableCardBody className="w-48 h-64 bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-800 dark:to-slate-900 border-8 border-white dark:border-slate-700 shadow-xl col-span-2 justify-self-center">
+                    <div className="h-full w-full bg-gradient-to-br from-orange-200 via-red-200 to-pink-200 dark:from-orange-900/50 dark:via-red-900/50 dark:to-pink-900/50 rounded-sm flex flex-col">
+                      <div className="flex-1 bg-gradient-to-br from-yellow-400/20 to-orange-400/20 rounded-sm m-2 flex items-center justify-center">
+                        <div className="text-center">
+                          <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-2">
+                            <svg className="w-6 h-6 text-white/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                            </svg>
+                          </div>
+                          <div className="text-xs text-white/80 font-medium">Best Friends</div>
+                        </div>
+                      </div>
+                      <div className="bg-white dark:bg-slate-800 p-2 rounded-b-sm">
+                        <div className="text-xs text-foreground/60">02:15 AM</div>
+                      </div>
+                    </div>
+                  </DraggableCardBody>
+                </div>
+
+                {/* Camera Interface Overlay */}
+                <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+                  <div className="bg-black/80 backdrop-blur-sm rounded-2xl p-4 min-w-[280px]">
+                    <div className="text-center text-white mb-3">
+                      <div className="text-sm font-medium mb-1">{t('dayAfterReveal')}</div>
+                      <div className="text-xs text-white/70">{t('revealCountdown')} 8 {t('hours')}</div>
+                    </div>
+                    <div className="flex items-center justify-center gap-4">
+                      <div className="text-xs text-white/60">7/12 {t('photosTaken')}</div>
+                      <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center">
+                        <div className="w-4 h-4 rounded-full bg-white/40"></div>
+                      </div>
+                      <div className="text-xs text-white/60">5 {t('photosRemaining')}</div>
+                    </div>
+                  </div>
+                </div>
+              </DraggableCardContainer>
+            </div>
+          </div>
+
+          <div className="text-center">
+            <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-foreground/5 to-foreground/10 border border-foreground/10">
+              <div className="w-2 h-2 bg-yellow-500 rounded-full animate-pulse"></div>
+              <span className="text-sm text-foreground/70 font-medium">{t('cameraIncluded')}</span>
+            </div>
           </div>
         </div>
       </section>
@@ -824,19 +1010,19 @@ export default function Home() {
         <div className="relative z-10 mx-auto max-w-4xl px-4 sm:px-6 text-center">
           <div className="inline-flex items-center rounded-full border border-blue-500/20 bg-blue-500/10 backdrop-blur-sm px-3 sm:px-4 py-2 text-xs sm:text-sm mb-6 sm:mb-8 animate-fade-in-up">
             <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse mr-2"></div>
-            <span className="text-blue-700 dark:text-blue-300 font-medium">Coming Soon</span>
+            <span className="text-blue-700 dark:text-blue-300 font-medium">{t('comingSoon')}</span>
           </div>
 
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4 sm:mb-6 animate-fade-in-up animation-delay-200">
-            <span className="text-foreground">Ready to revolutionize</span>
+            <span className="text-foreground">{t('readyToRevolutionize')}</span>
             <br />
             <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent animate-gradient">
-              your events?
+              {t('yourEvents')}
             </span>
           </h2>
           
           <p className="text-base sm:text-lg lg:text-xl text-foreground/70 max-w-2xl mx-auto mb-8 sm:mb-12 leading-relaxed animate-fade-in-up animation-delay-400">
-            We&apos;re putting the final touches on bole.to. Join our waitlist to get exclusive early access and be among the first to experience the future of event management.
+            {t('waitlistCopy')}
           </p>
 
           <div className="mb-8 sm:mb-12 animate-fade-in-up animation-delay-600">
@@ -844,7 +1030,7 @@ export default function Home() {
               <div className="flex-1 relative">
                 <input
                   type="email"
-                  placeholder="Enter your email address"
+                  placeholder={t('enterEmail')}
                   className="w-full px-4 sm:px-6 py-3 sm:py-4 rounded-full border border-foreground/20 bg-background/80 backdrop-blur-sm text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-transparent transition-all duration-200"
                   required
                 />
@@ -854,7 +1040,7 @@ export default function Home() {
                 type="submit"
                 className="group bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-medium hover:shadow-lg hover:scale-105 transition-all duration-200 gpu-accelerated flex items-center justify-center gap-2 text-sm sm:text-base"
               >
-                Join Waitlist
+                {t('joinWaitlist')}
                 <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200 gpu-accelerated" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>
@@ -869,8 +1055,8 @@ export default function Home() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
                 </svg>
               </div>
-              <h3 className="font-semibold text-sm sm:text-base mb-1 sm:mb-2 group-hover:text-blue-600 transition-colors">Early Access</h3>
-              <p className="text-xs sm:text-sm text-foreground/70">Be the first to experience our revolutionary event platform before anyone else.</p>
+              <h3 className="font-semibold text-sm sm:text-base mb-1 sm:mb-2 group-hover:text-blue-600 transition-colors">{t('earlyAccess')}</h3>
+              <p className="text-xs sm:text-sm text-foreground/70">{t('earlyAccessDesc')}</p>
             </div>
 
             <div className="bg-gradient-to-br from-background/80 to-background/40 backdrop-blur-sm rounded-2xl border border-foreground/10 p-4 sm:p-6 hover:border-purple-500/20 transition-all duration-300 hover:shadow-lg group">
@@ -879,8 +1065,8 @@ export default function Home() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7" />
                 </svg>
               </div>
-              <h3 className="font-semibold text-sm sm:text-base mb-1 sm:mb-2 group-hover:text-purple-600 transition-colors">Exclusive Benefits</h3>
-              <p className="text-xs sm:text-sm text-foreground/70">Special pricing, premium features, and priority support for early adopters.</p>
+              <h3 className="font-semibold text-sm sm:text-base mb-1 sm:mb-2 group-hover:text-purple-600 transition-colors">{t('exclusiveBenefits')}</h3>
+              <p className="text-xs sm:text-sm text-foreground/70">{t('exclusiveBenefitsDesc')}</p>
             </div>
 
             <div className="bg-gradient-to-br from-background/80 to-background/40 backdrop-blur-sm rounded-2xl border border-foreground/10 p-4 sm:p-6 hover:border-emerald-500/20 transition-all duration-300 hover:shadow-lg group">
@@ -889,8 +1075,8 @@ export default function Home() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z" />
                 </svg>
               </div>
-              <h3 className="font-semibold text-sm sm:text-base mb-1 sm:mb-2 group-hover:text-emerald-600 transition-colors">Shape the Future</h3>
-              <p className="text-xs sm:text-sm text-foreground/70">Your feedback will help us build the perfect event management solution.</p>
+              <h3 className="font-semibold text-sm sm:text-base mb-1 sm:mb-2 group-hover:text-emerald-600 transition-colors">{t('shapeTheFuture')}</h3>
+              <p className="text-xs sm:text-sm text-foreground/70">{t('shapeTheFutureDesc')}</p>
             </div>
           </div>
 
@@ -903,7 +1089,7 @@ export default function Home() {
                 <div className="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-gradient-to-r from-orange-400 to-orange-600 border border-background"></div>
                 <div className="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-foreground/20 border border-background flex items-center justify-center text-[10px] font-medium">+</div>
               </div>
-              <span className="text-foreground/70 font-medium">Join 500+ people already on the waitlist</span>
+              <span className="text-foreground/70 font-medium">{t('joinWaitlistCount')}</span>
             </div>
           </div>
         </div>
@@ -920,19 +1106,19 @@ export default function Home() {
           <div className="text-center mb-12 sm:mb-16">
             <div className="inline-flex items-center rounded-full border border-emerald-500/20 bg-emerald-500/10 backdrop-blur-sm px-3 sm:px-4 py-2 text-xs sm:text-sm mb-6">
               <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse mr-2"></div>
-              <span className="text-emerald-700 dark:text-emerald-300 font-medium">Get in Touch</span>
+              <span className="text-emerald-700 dark:text-emerald-300 font-medium">{t('getInTouch')}</span>
             </div>
             
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-4 sm:mb-6">
-              <span className="text-foreground">Let&apos;s build the future of</span>
+              <span className="text-foreground">{t('letsBuild')}</span>
               <br />
               <span className="bg-gradient-to-r from-emerald-600 to-blue-600 bg-clip-text text-transparent">
-                events together
+                {t('eventsTogether')}
               </span>
             </h2>
             
             <p className="text-base sm:text-lg text-foreground/70 max-w-3xl mx-auto">
-              Have questions about bole.to? Want to partner with us? Or just want to chat about the future of event management? We&apos;d love to hear from you.
+              {t('contactCopy')}
             </p>
           </div>
 
@@ -946,8 +1132,8 @@ export default function Home() {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold mb-2">General Inquiries</h3>
-                    <p className="text-foreground/70 text-sm mb-4">Questions about bole.to, partnerships, or just want to say hello? Drop us a line.</p>
+                    <h3 className="text-xl font-semibold mb-2">{t('generalInquiries')}</h3>
+                    <p className="text-foreground/70 text-sm mb-4">{t('generalInquiriesDesc')}</p>
                     <a href="mailto:hello@bole.to" className="inline-flex items-center gap-2 text-emerald-600 hover:text-emerald-700 font-medium text-sm hover:underline transition-colors">
                       hello@bole.to
                       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -966,8 +1152,8 @@ export default function Home() {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold mb-2">Business & Partnerships</h3>
-                    <p className="text-foreground/70 text-sm mb-4">Interested in integrating with bole.to or exploring business opportunities?</p>
+                    <h3 className="text-xl font-semibold mb-2">{t('businessPartnerships')}</h3>
+                    <p className="text-foreground/70 text-sm mb-4">{t('businessPartnershipsDesc')}</p>
                     <a href="mailto:partnerships@bole.to" className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-medium text-sm hover:underline transition-colors">
                       partnerships@bole.to
                       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -986,8 +1172,8 @@ export default function Home() {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold mb-2">Support & Help</h3>
-                    <p className="text-foreground/70 text-sm mb-4">Need help with our platform or have technical questions?</p>
+                    <h3 className="text-xl font-semibold mb-2">{t('supportHelp')}</h3>
+                    <p className="text-foreground/70 text-sm mb-4">{t('supportHelpDesc')}</p>
                     <a href="mailto:support@bole.to" className="inline-flex items-center gap-2 text-orange-600 hover:text-orange-700 font-medium text-sm hover:underline transition-colors">
                       support@bole.to
                       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1000,11 +1186,11 @@ export default function Home() {
             </div>
 
             <div className="bg-gradient-to-br from-background/80 to-background/40 backdrop-blur-sm rounded-2xl border border-foreground/10 p-6 lg:p-8">
-              <h3 className="text-2xl font-semibold mb-6">Send us a message</h3>
+              <h3 className="text-2xl font-semibold mb-6">{t('sendMessage')}</h3>
               <form className="space-y-6">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label htmlFor="firstName" className="block text-sm font-medium mb-2">First Name</label>
+                    <label htmlFor="firstName" className="block text-sm font-medium mb-2">{t('firstName')}</label>
                     <input
                       type="text"
                       id="firstName"
@@ -1015,7 +1201,7 @@ export default function Home() {
                     />
                   </div>
                   <div>
-                    <label htmlFor="lastName" className="block text-sm font-medium mb-2">Last Name</label>
+                    <label htmlFor="lastName" className="block text-sm font-medium mb-2">{t('lastName')}</label>
                     <input
                       type="text"
                       id="lastName"
@@ -1028,7 +1214,7 @@ export default function Home() {
                 </div>
 
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium mb-2">Email</label>
+                  <label htmlFor="email" className="block text-sm font-medium mb-2">{t('email')}</label>
                   <input
                     type="email"
                     id="email"
@@ -1040,30 +1226,30 @@ export default function Home() {
                 </div>
 
                 <div>
-                  <label htmlFor="subject" className="block text-sm font-medium mb-2">Subject</label>
+                  <label htmlFor="subject" className="block text-sm font-medium mb-2">{t('subject')}</label>
                   <select
                     id="subject"
                     name="subject"
                     className="w-full px-4 py-3 rounded-xl border border-foreground/20 bg-background/50 focus:outline-none focus:ring-2 focus:ring-emerald-500/50 focus:border-transparent transition-all duration-200"
                     required
                   >
-                    <option value="">Select a topic...</option>
-                    <option value="general">General Inquiry</option>
-                    <option value="waitlist">Waitlist & Early Access</option>
-                    <option value="partnership">Business & Partnerships</option>
-                    <option value="support">Support & Help</option>
-                    <option value="press">Press & Media</option>
+                    <option value="">{t('selectTopic')}</option>
+                    <option value="general">{t('generalInquiry')}</option>
+                    <option value="waitlist">{t('waitlistEarlyAccess')}</option>
+                    <option value="partnership">{t('partnership')}</option>
+                    <option value="support">{t('support')}</option>
+                    <option value="press">{t('pressMedia')}</option>
                   </select>
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium mb-2">Message</label>
+                  <label htmlFor="message" className="block text-sm font-medium mb-2">{t('message')}</label>
                   <textarea
                     id="message"
                     name="message"
                     rows={4}
                     className="w-full px-4 py-3 rounded-xl border border-foreground/20 bg-background/50 focus:outline-none focus:ring-2 focus:ring-emerald-500/50 focus:border-transparent transition-all duration-200 resize-none"
-                    placeholder="Tell us how we can help you..."
+                    placeholder={t('messagePlaceholder')}
                     required
                   ></textarea>
                 </div>
@@ -1072,7 +1258,7 @@ export default function Home() {
                   type="submit"
                   className="w-full bg-gradient-to-r from-emerald-600 to-blue-600 text-white px-6 py-4 rounded-xl font-medium hover:shadow-lg hover:scale-105 transition-all duration-200 gpu-accelerated flex items-center justify-center gap-2"
                 >
-                  Send Message
+                  {t('sendMessageBtn')}
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
                   </svg>
@@ -1080,17 +1266,17 @@ export default function Home() {
               </form>
 
               <div className="mt-8 pt-6 border-t border-foreground/10">
-                <p className="text-sm text-foreground/60 mb-4">You can also reach us directly:</p>
+                <p className="text-sm text-foreground/60 mb-4">{t('reachDirectly')}</p>
                 <div className="flex flex-col sm:flex-row gap-4 text-sm">
                   <div className="flex items-center gap-2">
                     <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                    <span className="text-foreground/70">Usually respond within 24 hours</span>
+                    <span className="text-foreground/70">{t('respondTime')}</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <svg className="w-4 h-4 text-foreground/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
-                    <span className="text-foreground/70">GMT-6 (Central Time)</span>
+                    <span className="text-foreground/70">{t('timezone')}</span>
                   </div>
                 </div>
               </div>
@@ -1112,14 +1298,14 @@ export default function Home() {
                 </div>
               </div>
               <p className="text-foreground/70 text-sm sm:text-base mb-6 max-w-md leading-relaxed">
-                The future of event management. Comprehensive ticketing, offline QR scanning, social engagement, and real-time analytics in one powerful platform.
+                {t('footerDescription')}
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
                 <a
                   href="mailto:hello@bole.to?subject=Join%20the%20bole.to%20waitlist"
                   className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-2.5 text-sm font-medium hover:shadow-lg hover:scale-105 transition-all duration-200 gpu-accelerated"
                 >
-                  Join Waitlist
+                  {t('joinWaitlist')}
                   <svg className="ml-2 w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                   </svg>
@@ -1128,52 +1314,52 @@ export default function Home() {
                   href="#contact"
                   className="inline-flex items-center justify-center rounded-full border border-foreground/20 bg-background/50 backdrop-blur-sm px-4 py-2.5 text-sm font-medium hover:bg-foreground/5 hover:scale-105 transition-all duration-300"
                 >
-                  Get in Touch
+                  {t('getInTouch')}
                 </a>
               </div>
             </div>
 
             <div>
-              <h3 className="font-semibold mb-4">Product</h3>
+              <h3 className="font-semibold mb-4">{t('product')}</h3>
               <ul className="space-y-3 text-sm">
                 <li>
                   <a href="#features" className="text-foreground/70 hover:text-foreground hover:underline transition-colors">
-                    Features
+                    {t('features')}
                   </a>
                 </li>
                 <li>
                   <span className="text-foreground/40 cursor-not-allowed">
-                    Pricing
+                    {t('pricing')}
                   </span>
                   <span className="ml-2 inline-flex items-center rounded-full border border-orange-500/20 bg-orange-500/10 px-1.5 py-0.5 text-xs text-orange-700 dark:text-orange-300">
-                    Soon
+                    {t('soon')}
                   </span>
                 </li>
                 <li>
                   <span className="text-foreground/40 cursor-not-allowed">
-                    API Docs
+                    {t('apiDocs')}
                   </span>
                   <span className="ml-2 inline-flex items-center rounded-full border border-orange-500/20 bg-orange-500/10 px-1.5 py-0.5 text-xs text-orange-700 dark:text-orange-300">
-                    Soon
+                    {t('soon')}
                   </span>
                 </li>
                 <li>
                   <span className="text-foreground/40 cursor-not-allowed">
-                    Mobile Apps
+                    {t('mobileApps')}
                   </span>
                   <span className="ml-2 inline-flex items-center rounded-full border border-orange-500/20 bg-orange-500/10 px-1.5 py-0.5 text-xs text-orange-700 dark:text-orange-300">
-                    Soon
+                    {t('soon')}
                   </span>
                 </li>
               </ul>
             </div>
 
             <div>
-              <h3 className="font-semibold mb-4">Company</h3>
+              <h3 className="font-semibold mb-4">{t('company')}</h3>
               <ul className="space-y-3 text-sm">
                 <li>
                   <span className="text-foreground/40 cursor-not-allowed">
-                    About Us
+                    {t('aboutUs')}
                   </span>
                   <span className="ml-2 inline-flex items-center rounded-full border border-orange-500/20 bg-orange-500/10 px-1.5 py-0.5 text-xs text-orange-700 dark:text-orange-300">
                     Soon
@@ -1181,7 +1367,7 @@ export default function Home() {
                 </li>
                 <li>
                   <span className="text-foreground/40 cursor-not-allowed">
-                    Blog
+                    {t('blog')}
                   </span>
                   <span className="ml-2 inline-flex items-center rounded-full border border-orange-500/20 bg-orange-500/10 px-1.5 py-0.5 text-xs text-orange-700 dark:text-orange-300">
                     Soon
@@ -1189,7 +1375,7 @@ export default function Home() {
                 </li>
                 <li>
                   <span className="text-foreground/40 cursor-not-allowed">
-                    Careers
+                    {t('careers')}
                   </span>
                   <span className="ml-2 inline-flex items-center rounded-full border border-orange-500/20 bg-orange-500/10 px-1.5 py-0.5 text-xs text-orange-700 dark:text-orange-300">
                     Soon
@@ -1197,7 +1383,7 @@ export default function Home() {
                 </li>
                 <li>
                   <a href="#contact" className="text-foreground/70 hover:text-foreground hover:underline transition-colors">
-                    Contact
+                    {t('contact')}
                   </a>
                 </li>
               </ul>
@@ -1210,15 +1396,15 @@ export default function Home() {
                 <div className="flex items-center gap-4">
                   <span className="text-foreground/60">© 2024 bole.to</span>
                   <div className="hidden sm:block w-px h-4 bg-foreground/20"></div>
-                  <span className="text-foreground/60">All rights reserved</span>
+                  <span className="text-foreground/60">{t('allRightsReserved')}</span>
                 </div>
                 <div className="flex items-center gap-4">
                   <div className="hidden sm:block w-px h-4 bg-foreground/20"></div>
                   <span className="text-foreground/40">
-                    Privacy Policy
+                    {t('privacyPolicy')}
                   </span>
                   <span className="text-foreground/40">
-                    Terms of Service
+                    {t('termsOfService')}
                   </span>
                 </div>
               </div>
@@ -1226,7 +1412,7 @@ export default function Home() {
               <div className="flex items-center gap-4">
                 <div className="flex items-center gap-2 text-xs text-foreground/60">
                   <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                  <span>Status: All systems operational</span>
+                  <span>{t('systemsOperational')}</span>
                 </div>
                 <div className="hidden sm:block w-px h-4 bg-foreground/20"></div>
                 <div className="flex items-center gap-3">
@@ -1256,8 +1442,7 @@ export default function Home() {
 
           <div className="mt-6 sm:mt-8 pt-6 border-t border-foreground/10 text-center">
             <p className="text-xs text-foreground/50 leading-relaxed max-w-2xl mx-auto">
-              bole.to is currently in development. Join our waitlist to be notified when we launch and get exclusive early access to our platform. 
-              Built with ❤️ for event organizers and attendees worldwide.
+              {t('footerNote')}
             </p>
           </div>
         </div>
