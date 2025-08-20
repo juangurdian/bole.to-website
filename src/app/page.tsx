@@ -3,6 +3,7 @@ import Link from "next/link";
 import { DraggableCardContainer, DraggableCardBody } from "@/components/DraggableCard";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { TicketStubCard } from "@/components/TicketStubCard";
+import { CardContainer, CardBody, CardItem } from "@/components/3DCard";
 import { useTranslation } from "@/contexts/LanguageContext";
 
 export default function Home() {
@@ -114,83 +115,107 @@ export default function Home() {
                 <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold tracking-tight mb-3 sm:mb-4 bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent px-2">
                   {t('whyChoose')}
                 </h2>
-                <p className="text-base sm:text-lg lg:text-xl text-foreground/70 max-w-2xl lg:max-w-3xl mx-auto px-4 leading-relaxed">
+                <p className="text-base sm:text-lg lg:text-xl text-foreground/70 max-w-4xl lg:max-w-5xl mx-auto px-4 leading-relaxed">
                   {t('featuresSubtitle')}
                 </p>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
-                <div className="group p-4 sm:p-6 lg:p-8 rounded-2xl bg-gradient-to-br from-background to-background/50 border border-foreground/10 hover:border-foreground/20 backdrop-blur-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gradient-to-r from-blue-500 to-cyan-500 flex items-center justify-center mb-4 sm:mb-6 group-hover:scale-110 transition-transform">
-                    <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                    </svg>
-                  </div>
-                  <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3 group-hover:text-blue-600 transition-colors">{t('lightningFast')}</h3>
-                  <p className="text-sm sm:text-base text-foreground/70 leading-relaxed">
-                    {t('lightningFastDesc')}
-                  </p>
-                </div>
+                <CardContainer>
+                  <CardBody className="group p-4 sm:p-6 lg:p-8 rounded-2xl bg-gradient-to-br from-background to-background/50 border border-foreground/10 hover:border-foreground/20 backdrop-blur-sm hover:shadow-lg transition-all duration-300">
+                    <CardItem translateZ={20} className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gradient-to-r from-blue-500 to-cyan-500 flex items-center justify-center mb-4 sm:mb-6 group-hover:scale-110 transition-transform">
+                      <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                      </svg>
+                    </CardItem>
+                    <CardItem translateZ={10}>
+                      <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3 group-hover:text-blue-600 transition-colors">{t('lightningFast')}</h3>
+                      <p className="text-sm sm:text-base text-foreground/70 leading-relaxed">
+                        {t('lightningFastDesc')}
+                      </p>
+                    </CardItem>
+                  </CardBody>
+                </CardContainer>
 
-                <div className="group p-4 sm:p-6 lg:p-8 rounded-2xl bg-gradient-to-br from-background to-background/50 border border-foreground/10 hover:border-foreground/20 backdrop-blur-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center mb-4 sm:mb-6 group-hover:scale-110 transition-transform">
-                    <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                    </svg>
-                  </div>
-                  <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3 group-hover:text-purple-600 transition-colors">{t('secureByDesign')}</h3>
-                  <p className="text-sm sm:text-base text-foreground/70 leading-relaxed">
-                    {t('secureByDesignDesc')}
-                  </p>
-                </div>
+                <CardContainer>
+                  <CardBody className="group p-4 sm:p-6 lg:p-8 rounded-2xl bg-gradient-to-br from-background to-background/50 border border-foreground/10 hover:border-foreground/20 backdrop-blur-sm hover:shadow-lg transition-all duration-300">
+                    <CardItem translateZ={20} className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center mb-4 sm:mb-6 group-hover:scale-110 transition-transform">
+                      <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                      </svg>
+                    </CardItem>
+                    <CardItem translateZ={10}>
+                      <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3 group-hover:text-purple-600 transition-colors">{t('secureByDesign')}</h3>
+                      <p className="text-sm sm:text-base text-foreground/70 leading-relaxed">
+                        {t('secureByDesignDesc')}
+                      </p>
+                    </CardItem>
+                  </CardBody>
+                </CardContainer>
 
-                <div className="group p-4 sm:p-6 lg:p-8 rounded-2xl bg-gradient-to-br from-background to-background/50 border border-foreground/10 hover:border-foreground/20 backdrop-blur-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gradient-to-r from-emerald-500 to-teal-500 flex items-center justify-center mb-4 sm:mb-6 group-hover:scale-110 transition-transform">
-                    <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                    </svg>
-                  </div>
-                  <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3 group-hover:text-emerald-600 transition-colors">{t('userCentric')}</h3>
-                  <p className="text-sm sm:text-base text-foreground/70 leading-relaxed">
-                    {t('userCentricDesc')}
-                  </p>
-                </div>
+                <CardContainer>
+                  <CardBody className="group p-4 sm:p-6 lg:p-8 rounded-2xl bg-gradient-to-br from-background to-background/50 border border-foreground/10 hover:border-foreground/20 backdrop-blur-sm hover:shadow-lg transition-all duration-300">
+                    <CardItem translateZ={20} className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gradient-to-r from-emerald-500 to-teal-500 flex items-center justify-center mb-4 sm:mb-6 group-hover:scale-110 transition-transform">
+                      <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                      </svg>
+                    </CardItem>
+                    <CardItem translateZ={10}>
+                      <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3 group-hover:text-emerald-600 transition-colors">{t('userCentric')}</h3>
+                      <p className="text-sm sm:text-base text-foreground/70 leading-relaxed">
+                        {t('userCentricDesc')}
+                      </p>
+                    </CardItem>
+                  </CardBody>
+                </CardContainer>
 
-                <div className="group p-4 sm:p-6 lg:p-8 rounded-2xl bg-gradient-to-br from-background to-background/50 border border-foreground/10 hover:border-foreground/20 backdrop-blur-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gradient-to-r from-orange-500 to-yellow-500 flex items-center justify-center mb-4 sm:mb-6 group-hover:scale-110 transition-transform">
-                    <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
-                    </svg>
-                  </div>
-                  <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3 group-hover:text-orange-600 transition-colors">{t('seamlessIntegration')}</h3>
-                  <p className="text-sm sm:text-base text-foreground/70 leading-relaxed">
-                    {t('seamlessIntegrationDesc')}
-                  </p>
-                </div>
+                <CardContainer>
+                  <CardBody className="group p-4 sm:p-6 lg:p-8 rounded-2xl bg-gradient-to-br from-background to-background/50 border border-foreground/10 hover:border-foreground/20 backdrop-blur-sm hover:shadow-lg transition-all duration-300">
+                    <CardItem translateZ={20} className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gradient-to-r from-orange-500 to-yellow-500 flex items-center justify-center mb-4 sm:mb-6 group-hover:scale-110 transition-transform">
+                      <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+                      </svg>
+                    </CardItem>
+                    <CardItem translateZ={10}>
+                      <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3 group-hover:text-orange-600 transition-colors">{t('seamlessIntegration')}</h3>
+                      <p className="text-sm sm:text-base text-foreground/70 leading-relaxed">
+                        {t('seamlessIntegrationDesc')}
+                      </p>
+                    </CardItem>
+                  </CardBody>
+                </CardContainer>
 
-                <div className="group p-4 sm:p-6 lg:p-8 rounded-2xl bg-gradient-to-br from-background to-background/50 border border-foreground/10 hover:border-foreground/20 backdrop-blur-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gradient-to-r from-indigo-500 to-blue-500 flex items-center justify-center mb-4 sm:mb-6 group-hover:scale-110 transition-transform">
-                    <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                    </svg>
-                  </div>
-                  <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3 group-hover:text-indigo-600 transition-colors">{t('innovationFirst')}</h3>
-                  <p className="text-sm sm:text-base text-foreground/70 leading-relaxed">
-                    {t('innovationFirstDesc')}
-                  </p>
-                </div>
+                <CardContainer>
+                  <CardBody className="group p-4 sm:p-6 lg:p-8 rounded-2xl bg-gradient-to-br from-background to-background/50 border border-foreground/10 hover:border-foreground/20 backdrop-blur-sm hover:shadow-lg transition-all duration-300">
+                    <CardItem translateZ={20} className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gradient-to-r from-indigo-500 to-blue-500 flex items-center justify-center mb-4 sm:mb-6 group-hover:scale-110 transition-transform">
+                      <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                      </svg>
+                    </CardItem>
+                    <CardItem translateZ={10}>
+                      <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3 group-hover:text-indigo-600 transition-colors">{t('innovationFirst')}</h3>
+                      <p className="text-sm sm:text-base text-foreground/70 leading-relaxed">
+                        {t('innovationFirstDesc')}
+                      </p>
+                    </CardItem>
+                  </CardBody>
+                </CardContainer>
 
-                <div className="group p-4 sm:p-6 lg:p-8 rounded-2xl bg-gradient-to-br from-background to-background/50 border border-foreground/10 hover:border-foreground/20 backdrop-blur-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gradient-to-r from-rose-500 to-pink-500 flex items-center justify-center mb-4 sm:mb-6 group-hover:scale-110 transition-transform">
-                    <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192L5.636 18.364M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
-                    </svg>
-                  </div>
-                  <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3 group-hover:text-rose-600 transition-colors">{t('support247')}</h3>
-                  <p className="text-sm sm:text-base text-foreground/70 leading-relaxed">
-                    {t('support247Desc')}
-                  </p>
-                </div>
+                <CardContainer>
+                  <CardBody className="group p-4 sm:p-6 lg:p-8 rounded-2xl bg-gradient-to-br from-background to-background/50 border border-foreground/10 hover:border-foreground/20 backdrop-blur-sm hover:shadow-lg transition-all duration-300">
+                    <CardItem translateZ={20} className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gradient-to-r from-rose-500 to-pink-500 flex items-center justify-center mb-4 sm:mb-6 group-hover:scale-110 transition-transform">
+                      <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192L5.636 18.364M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
+                      </svg>
+                    </CardItem>
+                    <CardItem translateZ={10}>
+                      <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3 group-hover:text-rose-600 transition-colors">{t('support247')}</h3>
+                      <p className="text-sm sm:text-base text-foreground/70 leading-relaxed">
+                        {t('support247Desc')}
+                      </p>
+                    </CardItem>
+                  </CardBody>
+                </CardContainer>
               </div>
 
               <div className="mt-12 sm:mt-16 text-center">
