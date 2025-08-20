@@ -14,13 +14,11 @@ export const TicketStubCard = ({
   translateDepth = 15,
   className,
   children,
-  backgroundColor,
 }: {
   rotateDepth?: number;
   translateDepth?: number;
   className?: string;
   children: React.ReactNode;
-  backgroundColor?: string;
 }) => {
   const ref = useRef<HTMLDivElement>(null);
 
