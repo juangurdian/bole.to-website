@@ -228,7 +228,7 @@ export const translations = {
 
     // Hero Section
     introducing: "Introducing",
-    buildWith: "Unite. Ignite. Exite",
+    buildWith: "Unite. Ignite. Excite.",
     confidence: "This is Bole.to",
     heroCopy: "We're crafting a modern platform at bole.to. Join the waitlist and be the first to know when we launch.",
     joinWaitlist: "Join the waitlist",
