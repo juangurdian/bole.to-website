@@ -438,8 +438,8 @@ export default function Home() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                       </svg>
                     </div>
-                    <h3 className="text-xl font-semibold mb-3 text-white group-hover:text-blue-100 transition-colors">{t('create')}</h3>
-                    <p className="text-blue-100/90 text-sm leading-relaxed">{t('createDesc')}</p>
+                    <h3 className="text-3xl font-semibold mb-3 text-white group-hover:text-blue-100 transition-colors">{t('create')}</h3>
+                    <p className="text-blue-100/90 text-lg leading-relaxed">{t('createDesc')}</p>
                   </div>
                   
                   {/* QR Code area */}
@@ -484,8 +484,8 @@ export default function Home() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 110 4v3a2 2 0 002 2h14a2 2 0 002-2v-3a2 2 0 110-4V7a2 2 0 00-2-2H5z" />
                       </svg>
                     </div>
-                    <h3 className="text-xl font-semibold mb-3 text-white group-hover:text-cyan-100 transition-colors">{t('configureTickets')}</h3>
-                    <p className="text-cyan-100/90 text-sm leading-relaxed">{t('configureTicketsDesc')}</p>
+                    <h3 className="text-3xl font-semibold mb-3 text-white group-hover:text-cyan-100 transition-colors">{t('configureTickets')}</h3>
+                    <p className="text-cyan-100/90 text-lg leading-relaxed">{t('configureTicketsDesc')}</p>
                   </div>
                   
                   {/* QR Code area */}
@@ -530,8 +530,8 @@ export default function Home() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
                       </svg>
                     </div>
-                    <h3 className="text-xl font-semibold mb-3 text-white group-hover:text-emerald-100 transition-colors">{t('collectPayment')}</h3>
-                    <p className="text-emerald-100/90 text-sm leading-relaxed">{t('collectPaymentDesc')}</p>
+                    <h3 className="text-3xl font-semibold mb-3 text-white group-hover:text-emerald-100 transition-colors">{t('collectPayment')}</h3>
+                    <p className="text-emerald-100/90 text-lg leading-relaxed">{t('collectPaymentDesc')}</p>
                   </div>
                   
                   {/* QR Code area */}
@@ -576,8 +576,8 @@ export default function Home() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1zm12 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z" />
                       </svg>
                     </div>
-                    <h3 className="text-xl font-semibold mb-3 text-white group-hover:text-orange-100 transition-colors">{t('operateAtDoor')}</h3>
-                    <p className="text-orange-100/90 text-sm leading-relaxed">{t('operateAtDoorDesc')}</p>
+                    <h3 className="text-3xl font-semibold mb-3 text-white group-hover:text-orange-100 transition-colors">{t('operateAtDoor')}</h3>
+                    <p className="text-orange-100/90 text-lg leading-relaxed">{t('operateAtDoorDesc')}</p>
                   </div>
                   
                   {/* QR Code area */}
