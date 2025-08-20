@@ -207,7 +207,7 @@ export default function Home() {
         </div>
       </div>
       
-      <section className="w-full py-16 sm:py-20 lg:py-24 xl:py-32 bg-gradient-to-br from-background via-blue-500/5 to-purple-500/5" 
+      <section className="w-full py-24 sm:py-32 lg:py-40 xl:py-48 bg-gradient-to-br from-background via-blue-500/5 to-purple-500/5" 
         style={{ width: '100vw', margin: 0, padding: 0 }}>
         <div className="absolute inset-0">
           <div className="absolute top-10 sm:top-20 left-4 sm:left-10 w-24 sm:w-40 h-24 sm:h-40 bg-gradient-to-r from-purple-400/10 to-pink-400/10 rounded-full blur-2xl animate-float"></div>

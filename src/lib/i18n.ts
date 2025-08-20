@@ -228,8 +228,8 @@ export const translations = {
 
     // Hero Section
     introducing: "Introducing",
-    buildWith: "Build with",
-    confidence: "confidence",
+    buildWith: "Unite. Ignite. Exite",
+    confidence: "This is Bole.to",
     heroCopy: "We're crafting a modern platform at bole.to. Join the waitlist and be the first to know when we launch.",
     joinWaitlist: "Join the waitlist",
     learnMore: "Learn more",
@@ -238,21 +238,21 @@ export const translations = {
 
     // Features Section
     whyChoose: "Why choose bole.to?",
-    featuresSubtitle: "Built for the modern web with cutting-edge technology and user experience at the forefront.",
+    featuresSubtitle: "At bole.to, we’re not just here to sell tickets — we’re here to help your event truly connect with people. As a Latin startup, we understand how our culture is lived, shared, and celebrated. Our platform is simple, fast, and secure, making it easy for your audience to discover your event, get excited, and show up ready to enjoy. From the first announcement to the final applause, we’re with you every step of the way, offering reliable technology, real 24/7 support, and that personal latino touch that keeps everything running smoothly.",
     
     // Feature Cards
     lightningFast: "Lightning Fast",
-    lightningFastDesc: "Built with performance in mind. Experience blazing-fast load times and smooth interactions across all devices.",
+    lightningFastDesc: "Your attendees can buy tickets in under 10 seconds, even from their phone. No slow-loading screens, no unnecessary steps, so the excitement never fades.",
     secureByDesign: "Secure by Design",
-    secureByDesignDesc: "Enterprise-grade security measures protect your data with end-to-end encryption and advanced threat detection.",
+    secureByDesignDesc: "We protect your sales and your customers’ data with end-to-end encryption and constant monitoring. Your community feels safe from purchase to event day.",
     userCentric: "User-Centric",
-    userCentricDesc: "Every feature is crafted with your needs in mind, delivering an intuitive experience that just works.",
+    userCentricDesc: "From automated reminders and quick check-in to pre-event messages, everything is designed to make your attendees feel part of the experience before they even arrive.",
     seamlessIntegration: "Seamless Integration",
-    seamlessIntegrationDesc: "Connect with your existing tools and workflows through our comprehensive API and integrations.",
+    seamlessIntegrationDesc: "Connect bole.to with your social media, payment systems, and marketing tools. Your attendees can discover, pay, and get their tickets without leaving their favorite digital space.",
     innovationFirst: "Innovation First",
-    innovationFirstDesc: "Stay ahead with cutting-edge features powered by the latest technology and industry best practices.",
+    innovationFirstDesc: "Dynamic QR codes, real-time stats, and live engagement tools. You’re not just selling tickets, you’re creating interaction every step of the way.",
     support247: "24/7 Support",
-    support247Desc: "Our dedicated support team is always here to help you succeed, whenever you need assistance.",
+    support247Desc: "Our team replies in minutes, not days. Whether you need help before the event or during check-in, you’ll always have someone ready to assist you.",
     trustedBy: "Trusted by developers worldwide",
 
     // Social Section
@@ -319,7 +319,7 @@ export const translations = {
 
     // Promoters Section
     sellMore: "Sell more",
-    withPromoterTeam: "with your promoter team",
+    withPromoterTeam: " with your promoter team",
     promotersSubtitle: "Built-in promoter management with unique links, tiered commissions, and live leaderboards. Scale your sales without losing control.",
     linksAndCodes: "Links & Codes",
     linksDesc: "Unique UTM links, personal codes and QR codes for each promoter to distribute and track.",
