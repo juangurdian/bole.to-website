@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { DraggableCardContainer, DraggableCardBody } from "@/components/DraggableCard";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
+import { TicketStubCard } from "@/components/TicketStubCard";
 import { useTranslation } from "@/contexts/LanguageContext";
 
 export default function Home() {
@@ -397,53 +398,189 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8 mb-20">
-            <div className="group relative bg-gradient-to-br from-background/80 to-background/40 backdrop-blur-sm rounded-2xl border border-foreground/10 p-6 lg:p-8 hover:border-blue-500/20 transition-all duration-300 hover:shadow-lg">
-              <div>
-                <div className="w-12 h-12 rounded-full bg-gradient-to-r from-blue-500 to-cyan-500 flex items-center justify-center mb-4">
-                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                  </svg>
+            <TicketStubCard className="group">
+              <div className="relative bg-gradient-to-br from-blue-500/90 via-blue-600/80 to-cyan-500/90 backdrop-blur-sm border border-blue-400/30 p-6 lg:p-8 ticket-stub">
+                {/* Ticket perforations */}
+                <div className="absolute top-0 right-20 w-px h-full border-l-2 border-dashed border-blue-300/40"></div>
+                <div className="absolute top-4 right-16 w-4 h-4 bg-blue-300/20 rounded-full"></div>
+                <div className="absolute bottom-4 right-16 w-4 h-4 bg-blue-300/20 rounded-full"></div>
+                
+                {/* Main content area */}
+                <div className="relative z-10 flex items-center">
+                  <div className="flex-1 pr-6">
+                    <div className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center mb-4 border border-white/30">
+                      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                      </svg>
+                    </div>
+                    <h3 className="text-xl font-semibold mb-3 text-white group-hover:text-blue-100 transition-colors">{t('create')}</h3>
+                    <p className="text-blue-100/90 text-sm leading-relaxed">{t('createDesc')}</p>
+                  </div>
+                  
+                  {/* QR Code area */}
+                  <div className="flex-shrink-0">
+                    <div className="w-16 h-16 bg-gradient-to-br from-silver-200 via-gray-100 to-silver-300 rounded-lg p-1 shadow-lg border border-gray-300">
+                      <div className="w-full h-full bg-white rounded grid grid-cols-4 gap-px p-1">
+                        <div className="bg-black rounded-sm"></div>
+                        <div className="bg-white"></div>
+                        <div className="bg-black rounded-sm"></div>
+                        <div className="bg-black rounded-sm"></div>
+                        <div className="bg-white"></div>
+                        <div className="bg-black rounded-sm"></div>
+                        <div className="bg-white"></div>
+                        <div className="bg-black rounded-sm"></div>
+                        <div className="bg-black rounded-sm"></div>
+                        <div className="bg-white"></div>
+                        <div className="bg-black rounded-sm"></div>
+                        <div className="bg-white"></div>
+                        <div className="bg-white"></div>
+                        <div className="bg-black rounded-sm"></div>
+                        <div className="bg-black rounded-sm"></div>
+                        <div className="bg-white"></div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <h3 className="text-xl font-semibold mb-3 group-hover:text-blue-600 transition-colors">{t('create')}</h3>
-                <p className="text-foreground/70 text-sm leading-relaxed">{t('createDesc')}</p>
               </div>
-            </div>
+            </TicketStubCard>
 
-            <div className="group relative bg-gradient-to-br from-background/80 to-background/40 backdrop-blur-sm rounded-2xl border border-foreground/10 p-6 lg:p-8 hover:border-cyan-500/20 transition-all duration-300 hover:shadow-lg">
-              <div>
-                <div className="w-12 h-12 rounded-full bg-gradient-to-r from-cyan-500 to-teal-500 flex items-center justify-center mb-4">
-                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 110 4v3a2 2 0 002 2h14a2 2 0 002-2v-3a2 2 0 110-4V7a2 2 0 00-2-2H5z" />
-                  </svg>
+            <TicketStubCard className="group">
+              <div className="relative bg-gradient-to-br from-cyan-500/90 via-teal-600/80 to-emerald-500/90 backdrop-blur-sm border border-cyan-400/30 p-6 lg:p-8 ticket-stub">
+                {/* Ticket perforations */}
+                <div className="absolute top-0 right-20 w-px h-full border-l-2 border-dashed border-cyan-300/40"></div>
+                <div className="absolute top-4 right-16 w-4 h-4 bg-cyan-300/20 rounded-full"></div>
+                <div className="absolute bottom-4 right-16 w-4 h-4 bg-cyan-300/20 rounded-full"></div>
+                
+                {/* Main content area */}
+                <div className="relative z-10 flex items-center">
+                  <div className="flex-1 pr-6">
+                    <div className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center mb-4 border border-white/30">
+                      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 110 4v3a2 2 0 002 2h14a2 2 0 002-2v-3a2 2 0 110-4V7a2 2 0 00-2-2H5z" />
+                      </svg>
+                    </div>
+                    <h3 className="text-xl font-semibold mb-3 text-white group-hover:text-cyan-100 transition-colors">{t('configureTickets')}</h3>
+                    <p className="text-cyan-100/90 text-sm leading-relaxed">{t('configureTicketsDesc')}</p>
+                  </div>
+                  
+                  {/* QR Code area */}
+                  <div className="flex-shrink-0">
+                    <div className="w-16 h-16 bg-gradient-to-br from-silver-200 via-gray-100 to-silver-300 rounded-lg p-1 shadow-lg border border-gray-300">
+                      <div className="w-full h-full bg-white rounded grid grid-cols-4 gap-px p-1">
+                        <div className="bg-black rounded-sm"></div>
+                        <div className="bg-white"></div>
+                        <div className="bg-white"></div>
+                        <div className="bg-black rounded-sm"></div>
+                        <div className="bg-black rounded-sm"></div>
+                        <div className="bg-white"></div>
+                        <div className="bg-black rounded-sm"></div>
+                        <div className="bg-white"></div>
+                        <div className="bg-white"></div>
+                        <div className="bg-black rounded-sm"></div>
+                        <div className="bg-white"></div>
+                        <div className="bg-black rounded-sm"></div>
+                        <div className="bg-black rounded-sm"></div>
+                        <div className="bg-white"></div>
+                        <div className="bg-black rounded-sm"></div>
+                        <div className="bg-black rounded-sm"></div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <h3 className="text-xl font-semibold mb-3 group-hover:text-cyan-600 transition-colors">{t('configureTickets')}</h3>
-                <p className="text-foreground/70 text-sm leading-relaxed">{t('configureTicketsDesc')}</p>
               </div>
-            </div>
+            </TicketStubCard>
 
-            <div className="group relative bg-gradient-to-br from-background/80 to-background/40 backdrop-blur-sm rounded-2xl border border-foreground/10 p-6 lg:p-8 hover:border-emerald-500/20 transition-all duration-300 hover:shadow-lg">
-              <div>
-                <div className="w-12 h-12 rounded-full bg-gradient-to-r from-emerald-500 to-green-500 flex items-center justify-center mb-4">
-                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
-                  </svg>
+            <TicketStubCard className="group">
+              <div className="relative bg-gradient-to-br from-emerald-500/90 via-green-600/80 to-teal-500/90 backdrop-blur-sm border border-emerald-400/30 p-6 lg:p-8 ticket-stub">
+                {/* Ticket perforations */}
+                <div className="absolute top-0 right-20 w-px h-full border-l-2 border-dashed border-emerald-300/40"></div>
+                <div className="absolute top-4 right-16 w-4 h-4 bg-emerald-300/20 rounded-full"></div>
+                <div className="absolute bottom-4 right-16 w-4 h-4 bg-emerald-300/20 rounded-full"></div>
+                
+                {/* Main content area */}
+                <div className="relative z-10 flex items-center">
+                  <div className="flex-1 pr-6">
+                    <div className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center mb-4 border border-white/30">
+                      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
+                      </svg>
+                    </div>
+                    <h3 className="text-xl font-semibold mb-3 text-white group-hover:text-emerald-100 transition-colors">{t('collectPayment')}</h3>
+                    <p className="text-emerald-100/90 text-sm leading-relaxed">{t('collectPaymentDesc')}</p>
+                  </div>
+                  
+                  {/* QR Code area */}
+                  <div className="flex-shrink-0">
+                    <div className="w-16 h-16 bg-gradient-to-br from-silver-200 via-gray-100 to-silver-300 rounded-lg p-1 shadow-lg border border-gray-300">
+                      <div className="w-full h-full bg-white rounded grid grid-cols-4 gap-px p-1">
+                        <div className="bg-white"></div>
+                        <div className="bg-black rounded-sm"></div>
+                        <div className="bg-black rounded-sm"></div>
+                        <div className="bg-white"></div>
+                        <div className="bg-black rounded-sm"></div>
+                        <div className="bg-white"></div>
+                        <div className="bg-white"></div>
+                        <div className="bg-black rounded-sm"></div>
+                        <div className="bg-black rounded-sm"></div>
+                        <div className="bg-white"></div>
+                        <div className="bg-black rounded-sm"></div>
+                        <div className="bg-white"></div>
+                        <div className="bg-white"></div>
+                        <div className="bg-black rounded-sm"></div>
+                        <div className="bg-white"></div>
+                        <div className="bg-black rounded-sm"></div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <h3 className="text-xl font-semibold mb-3 group-hover:text-emerald-600 transition-colors">{t('collectPayment')}</h3>
-                <p className="text-foreground/70 text-sm leading-relaxed">{t('collectPaymentDesc')}</p>
               </div>
-            </div>
+            </TicketStubCard>
 
-            <div className="group relative bg-gradient-to-br from-background/80 to-background/40 backdrop-blur-sm rounded-2xl border border-foreground/10 p-6 lg:p-8 hover:border-orange-500/20 transition-all duration-300 hover:shadow-lg">
-              <div>
-                <div className="w-12 h-12 rounded-full bg-gradient-to-r from-orange-500 to-red-500 flex items-center justify-center mb-4">
-                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1zm12 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z" />
-                  </svg>
+            <TicketStubCard className="group">
+              <div className="relative bg-gradient-to-br from-orange-500/90 via-red-600/80 to-pink-500/90 backdrop-blur-sm border border-orange-400/30 p-6 lg:p-8 ticket-stub">
+                {/* Ticket perforations */}
+                <div className="absolute top-0 right-20 w-px h-full border-l-2 border-dashed border-orange-300/40"></div>
+                <div className="absolute top-4 right-16 w-4 h-4 bg-orange-300/20 rounded-full"></div>
+                <div className="absolute bottom-4 right-16 w-4 h-4 bg-orange-300/20 rounded-full"></div>
+                
+                {/* Main content area */}
+                <div className="relative z-10 flex items-center">
+                  <div className="flex-1 pr-6">
+                    <div className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center mb-4 border border-white/30">
+                      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1zm12 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z" />
+                      </svg>
+                    </div>
+                    <h3 className="text-xl font-semibold mb-3 text-white group-hover:text-orange-100 transition-colors">{t('operateAtDoor')}</h3>
+                    <p className="text-orange-100/90 text-sm leading-relaxed">{t('operateAtDoorDesc')}</p>
+                  </div>
+                  
+                  {/* QR Code area */}
+                  <div className="flex-shrink-0">
+                    <div className="w-16 h-16 bg-gradient-to-br from-silver-200 via-gray-100 to-silver-300 rounded-lg p-1 shadow-lg border border-gray-300">
+                      <div className="w-full h-full bg-white rounded grid grid-cols-4 gap-px p-1">
+                        <div className="bg-black rounded-sm"></div>
+                        <div className="bg-black rounded-sm"></div>
+                        <div className="bg-white"></div>
+                        <div className="bg-black rounded-sm"></div>
+                        <div className="bg-white"></div>
+                        <div className="bg-black rounded-sm"></div>
+                        <div className="bg-black rounded-sm"></div>
+                        <div className="bg-white"></div>
+                        <div className="bg-white"></div>
+                        <div className="bg-black rounded-sm"></div>
+                        <div className="bg-white"></div>
+                        <div className="bg-black rounded-sm"></div>
+                        <div className="bg-black rounded-sm"></div>
+                        <div className="bg-white"></div>
+                        <div className="bg-white"></div>
+                        <div className="bg-black rounded-sm"></div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <h3 className="text-xl font-semibold mb-3 group-hover:text-orange-600 transition-colors">{t('operateAtDoor')}</h3>
-                <p className="text-foreground/70 text-sm leading-relaxed">{t('operateAtDoorDesc')}</p>
               </div>
-            </div>
+            </TicketStubCard>
           </div>
         </div>
       </section>
