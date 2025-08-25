@@ -9,9 +9,9 @@ export const translations = {
 
     // Hero Section
     introducing: "Presentamos",
-    buildWith: "Construye con",
-    confidence: "confianza",
-    heroCopy: "Estamos creando una plataforma moderna en bole.to. Únete a la lista de espera y sé el primero en saber cuándo lancemos.",
+    buildWith: "Momentos. Inolvidables. Vive la experiencia",
+    confidence: "Esto es Bole.to",
+    heroCopy: "Estamos creando una plataforma moderna en bole.to. Únete a la lista de espera y sé el primero en enterarte cuando lancemos.",
     joinWaitlist: "Unirse a la lista de espera",
     learnMore: "Conoce más",
     inDevelopment: "En desarrollo",
@@ -19,7 +19,7 @@ export const translations = {
 
     // Features Section
     whyChoose: "¿Por qué elegir bole.to?",
-    featuresSubtitle: "Construido para la web moderna con tecnología de vanguardia y experiencia de usuario al frente.",
+    featuresSubtitle: "En bole.to no hablamos solo de vender boletos, hablamos de hacer que tu evento conecte de verdad. Somos un startup latino que entiende cómo se vive y se comparte nuestra cultura. Te damos una plataforma sencilla, rápida y segura para que la gente se entere, se emocione y llegué lista a disfrutar. Desde que lo anuncias hasta el último aplauso, estamos ahí con tecnología confiable, soporte real 24/7 y ese toque latino cercano que hace que todo fluya.",
     
     // Feature Cards
     lightningFast: "Ultra Rápido",
