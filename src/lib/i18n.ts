@@ -192,7 +192,7 @@ export const translations = {
 
     // Camera D+1 Section
     cameraFeatures: "Características de Cámara",
-    captureTheMoment: "Captura el momento",
+    captureTheMoment: "Captura el momento, ",
     revealTomorrow: "revela mañana",
     cameraSubtitle: "Cada boleto incluye acceso a nuestra cámara digital exclusiva. Captura momentos espontáneos durante el evento que se revelarán automáticamente al día siguiente, creando una galería compartida de recuerdos únicos.",
     disposableStyle: "Estilo Cámara Desechable",
