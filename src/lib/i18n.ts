@@ -23,17 +23,17 @@ export const translations = {
     
     // Feature Cards
     lightningFast: "Ultra Rápido",
-    lightningFastDesc: "Construido pensando en el rendimiento. Experimenta tiempos de carga ultra rápidos e interacciones fluidas en todos los dispositivos.",
+    lightningFastDesc: "Tus asistentes podrán comprar boletos en menos de 10 segundos, incluso desde su celular. Sin pantallas que cargan lento y sin pasos innecesarios, para que la emoción no se enfríe.",
     secureByDesign: "Seguro por Diseño",
-    secureByDesignDesc: "Medidas de seguridad de nivel empresarial protegen tus datos con cifrado de extremo a extremo y detección avanzada de amenazas.",
+    secureByDesignDesc: "Protegemos tus ventas y los datos de tus clientes con cifrado de extremo a extremo y monitoreo constante. Tu comunidad se siente segura desde la compra hasta el evento.",
     userCentric: "Centrado en el Usuario",
-    userCentricDesc: "Cada característica está diseñada pensando en tus necesidades, ofreciendo una experiencia intuitiva que simplemente funciona.",
+    userCentricDesc: "Desde recordatorios automáticos y check-in rápido hasta mensajes previos al evento, todo está pensado para que tus asistentes se sientan parte antes incluso de llegar.",
     seamlessIntegration: "Integración Perfecta",
-    seamlessIntegrationDesc: "Conéctate con tus herramientas y flujos de trabajo existentes a través de nuestra API integral e integraciones.",
+    seamlessIntegrationDesc: "Conecta bole.to con tus redes sociales, sistemas de pago y plataformas de marketing. Tus asistentes podrán enterarse, pagar y recibir sus boletos sin salir de su espacio digital favorito.",
     innovationFirst: "Innovación Primero",
-    innovationFirstDesc: "Mantente a la vanguardia con características de última generación impulsadas por la tecnología más reciente y mejores prácticas de la industria.",
+    innovationFirstDesc: "Códigos QR dinámicos, estadísticas en tiempo real y herramientas de participación en vivo. No solo vendes boletos, creas interacción en cada momento.",
     support247: "Soporte 24/7",
-    support247Desc: "Nuestro equipo de soporte dedicado siempre está aquí para ayudarte a tener éxito, cuando necesites asistencia.",
+    support247Desc: "Nuestro equipo responde en minutos, no en días. Ya sea que necesites asistencia antes del evento o durante el acceso, siempre tendrás a alguien listo para ayudarte.",
     trustedBy: "De confianza para desarrolladores en todo el mundo",
 
     // Social Section
@@ -192,7 +192,7 @@ export const translations = {
 
     // Camera D+1 Section
     cameraFeatures: "Características de Cámara",
-    captureTheMoment: "Captura el momento, ",
+    captureTheMoment: "Captura el momento,",
     revealTomorrow: "revela mañana",
     cameraSubtitle: "Cada boleto incluye acceso a nuestra cámara digital exclusiva. Captura momentos espontáneos durante el evento que se revelarán automáticamente al día siguiente, creando una galería compartida de recuerdos únicos.",
     disposableStyle: "Estilo Cámara Desechable",
