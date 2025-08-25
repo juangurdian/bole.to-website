@@ -42,13 +42,13 @@ export const translations = {
     beforeTheDrop: "antes del lanzamiento",
     socialSubtitle: "Crea expectativa y participación mucho antes de que comience tu evento. Conecta artistas, asistentes y organizadores en una comunidad vibrante.",
     liveEventChat: "Chat del Evento en Vivo",
-    liveEventChatDesc: "Comparte emoción, coordina reuniones y conéctate con otros asistentes a través de mensajería en tiempo real.",
+    liveEventChatDesc: "Compartí la emoción, armá planes al instante y conectate con otros asistentes a través de mensajes en tiempo real.",
     attendeeDiscovery: "Descubrimiento de Asistentes",
-    attendeeDiscoveryDesc: "Ve quién va, conéctate con amigos y descubre nuevas personas que comparten tu gusto musical.",
+    attendeeDiscoveryDesc: "Mirá quiénes van, reencontrate con amigos y conocé gente nueva que comparte tu mismo gusto musical.",
     exclusiveDjContent: "Contenido Exclusivo de DJs",
-    exclusiveDjContentDesc: "Los DJs comparten mezclas exclusivas, pistas no lanzadas y contenido tras bambalinas para generar expectativa.",
+    exclusiveDjContentDesc: "Disfrutá mezclas únicas, pistas inéditas y material detrás del escenario que los DJs comparten solo aquí.",
     livePolls: "Encuestas y Comentarios en Vivo",
-    livePollsDesc: "Los organizadores crean encuestas para solicitudes de canciones, preferencias del evento y recopilan comentarios en tiempo real de la comunidad.",
+    livePollsDesc: "Los organizadores lanzan encuestas rápidas para pedir canciones, conocer preferencias y recibir comentarios en tiempo real de la comunidad.",
 
     // Live chat mock content
     djNexus: "DJ Nexus",
@@ -70,9 +70,9 @@ export const translations = {
 
     // Steps
     create: "Crear",
-    createDesc: "Imagen de portada, fecha y lugar, capacidad y categorías. Página pública lista para SEO.",
+    createDesc: "Imagen de portada, fecha y lugar, capacidad y categorías.",
     configureTickets: "Configurar Boletos",
-    configureTicketsDesc: "General, VIP, preventa, combos y cupones. Cuotas, horarios y niveles de precios.",
+    configureTicketsDesc: "General, VIP, preventa, combos y cupones. Cuotas, horarios y categorías de precios.",
     collectPayment: "Cobrar Pago",
     collectPaymentDesc: "Checkout en múltiples monedas, conciliación clara, reembolsos opcionales y transferencias.",
     operateAtDoor: "Operar en Puerta",
@@ -99,7 +99,7 @@ export const translations = {
     noInternet: "Sin Internet",
 
     // Promoters Section
-    sellMore: "Vende más",
+    sellMore: "Vende más ",
     withPromoterTeam: "con tu equipo de promotores",
     promotersSubtitle: "Gestión de promotores integrada con enlaces únicos, comisiones escalonadas y tablas de posiciones en vivo. Escala tus ventas sin perder el control.",
     linksAndCodes: "Enlaces y Códigos",
