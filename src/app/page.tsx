@@ -11,11 +11,10 @@ export default function Home() {
   
   return (
     <>
-      <div className="min-h-screen bg-gradient-to-br from-background via-background to-background/95 relative" 
-        style={{ width: '100vw', margin: 0, padding: 0, overflowX: 'hidden' }}>
+      <div className="min-h-screen bg-gradient-to-br from-background via-background to-background/95 relative">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-purple-500/5 to-pink-500/5"></div>
         
-        <div className="absolute inset-0">
+        <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-4 left-4 sm:top-10 sm:left-10 w-48 h-48 sm:w-72 sm:h-72 bg-gradient-to-r from-blue-400/20 to-cyan-400/20 rounded-full blur-3xl animate-pulse-slow"></div>
           <div className="absolute top-8 right-4 sm:top-20 sm:right-20 w-64 h-64 sm:w-96 sm:h-96 bg-gradient-to-r from-purple-400/20 to-pink-400/20 rounded-full blur-3xl animate-float"></div>
           <div className="absolute bottom-20 left-1/4 w-56 h-56 sm:w-80 sm:h-80 bg-gradient-to-r from-emerald-400/20 to-teal-400/20 rounded-full blur-3xl animate-float-delayed"></div>
@@ -24,7 +23,7 @@ export default function Home() {
           <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cg%20fill%3D%22%23CCCCCC%22%20fill-opacity%3D%220.03%22%3E%3Ccircle%20cx%3D%2230%22%20cy%3D%2230%22%20r%3D%221%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] animate-slide opacity-50 sm:opacity-100"></div>
         </div>
 
-        <div className="relative z-10" style={{ width: '100%' }}>
+        <div className="relative z-10">
           <header className="px-4 sm:px-6 lg:px-8 py-3 sm:py-4 lg:py-5 backdrop-blur-sm">
             <div className="mx-auto max-w-7xl flex items-center justify-between">
               <div className="flex items-center gap-2">

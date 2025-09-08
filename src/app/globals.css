@@ -17,7 +17,6 @@
 }
 
 html {
-  width: 100vw;
   margin: 0;
   padding: 0;
   overflow-x: hidden;
@@ -32,14 +31,13 @@ body {
   font-family: var(--font-geist-sans);
   margin: 0;
   padding: 0;
-  width: 100vw;
+  min-height: 100vh;
   overflow-x: hidden;
   transform: translateZ(0);
   -webkit-transform: translateZ(0);
 }
 
 #__next {
-  width: 100vw;
   margin: 0;
   padding: 0;
 }
