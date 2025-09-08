@@ -295,7 +295,7 @@ export const translations = {
     collectPayment: "Collect Payment",
     collectPaymentDesc: "Checkout in multiple currencies, clear reconciliation, optional refunds and transfers.",
     operateAtDoor: "Operate at Door",
-    operateAtDoorDesc: "Scanner on your phone (iOS/Android), millisecond validation, real offline mode, multiple checkpoints, staff roles.",
+    operateAtDoorDesc: "Scanner on your phone (iOS/Android), real offline mode, multiple checkpoints, staff roles.",
 
     // Access Section
     accessTitle: "Access that never fails,",

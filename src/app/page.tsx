@@ -426,16 +426,16 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8 mb-20">
-            <TicketStubCard className="group">
-              <div className="relative bg-gradient-to-br from-blue-500/90 via-blue-600/80 to-cyan-500/90 backdrop-blur-sm border border-blue-400/30 p-6 lg:p-8 ticket-stub">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8 mb-20 items-stretch">
+            <TicketStubCard className="group h-full">
+              <div className="relative bg-gradient-to-br from-blue-500/90 via-blue-600/80 to-cyan-500/90 backdrop-blur-sm border border-blue-400/30 p-6 lg:p-8 ticket-stub h-full min-h-[240px] flex flex-col">
                 {/* Ticket perforations */}
                 <div className="absolute top-0 right-20 w-px h-full border-l-2 border-dashed border-blue-300/40"></div>
                 <div className="absolute top-4 right-16 w-4 h-4 bg-blue-300/20 rounded-full"></div>
                 <div className="absolute bottom-4 right-16 w-4 h-4 bg-blue-300/20 rounded-full"></div>
                 
                 {/* Main content area */}
-                <div className="relative z-10 flex items-center">
+                <div className="relative z-10 flex items-center flex-1">
                   <div className="flex-1 pr-6">
                     <div className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center mb-4 border border-white/30">
                       <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -473,15 +473,15 @@ export default function Home() {
               </div>
             </TicketStubCard>
 
-            <TicketStubCard className="group">
-              <div className="relative bg-gradient-to-br from-cyan-500/90 via-teal-600/80 to-emerald-500/90 backdrop-blur-sm border border-cyan-400/30 p-6 lg:p-8 ticket-stub">
+            <TicketStubCard className="group h-full">
+              <div className="relative bg-gradient-to-br from-cyan-500/90 via-teal-600/80 to-emerald-500/90 backdrop-blur-sm border border-cyan-400/30 p-6 lg:p-8 ticket-stub h-full min-h-[240px] flex flex-col">
                 {/* Ticket perforations */}
                 <div className="absolute top-0 right-20 w-px h-full border-l-2 border-dashed border-cyan-300/40"></div>
                 <div className="absolute top-4 right-16 w-4 h-4 bg-cyan-300/20 rounded-full"></div>
                 <div className="absolute bottom-4 right-16 w-4 h-4 bg-cyan-300/20 rounded-full"></div>
                 
                 {/* Main content area */}
-                <div className="relative z-10 flex items-center">
+                <div className="relative z-10 flex items-center flex-1">
                   <div className="flex-1 pr-6">
                     <div className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center mb-4 border border-white/30">
                       <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -519,15 +519,15 @@ export default function Home() {
               </div>
             </TicketStubCard>
 
-            <TicketStubCard className="group">
-              <div className="relative bg-gradient-to-br from-emerald-500/90 via-green-600/80 to-teal-500/90 backdrop-blur-sm border border-emerald-400/30 p-6 lg:p-8 ticket-stub">
+            <TicketStubCard className="group h-full">
+              <div className="relative bg-gradient-to-br from-emerald-500/90 via-green-600/80 to-teal-500/90 backdrop-blur-sm border border-emerald-400/30 p-6 lg:p-8 ticket-stub h-full min-h-[240px] flex flex-col">
                 {/* Ticket perforations */}
                 <div className="absolute top-0 right-20 w-px h-full border-l-2 border-dashed border-emerald-300/40"></div>
                 <div className="absolute top-4 right-16 w-4 h-4 bg-emerald-300/20 rounded-full"></div>
                 <div className="absolute bottom-4 right-16 w-4 h-4 bg-emerald-300/20 rounded-full"></div>
                 
                 {/* Main content area */}
-                <div className="relative z-10 flex items-center">
+                <div className="relative z-10 flex items-center flex-1">
                   <div className="flex-1 pr-6">
                     <div className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center mb-4 border border-white/30">
                       <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -565,15 +565,15 @@ export default function Home() {
               </div>
             </TicketStubCard>
 
-            <TicketStubCard className="group">
-              <div className="relative bg-gradient-to-br from-orange-500/90 via-red-600/80 to-pink-500/90 backdrop-blur-sm border border-orange-400/30 p-6 lg:p-8 ticket-stub">
+            <TicketStubCard className="group h-full">
+              <div className="relative bg-gradient-to-br from-orange-500/90 via-red-600/80 to-pink-500/90 backdrop-blur-sm border border-orange-400/30 p-6 lg:p-8 ticket-stub h-full min-h-[240px] flex flex-col">
                 {/* Ticket perforations */}
                 <div className="absolute top-0 right-20 w-px h-full border-l-2 border-dashed border-orange-300/40"></div>
                 <div className="absolute top-4 right-16 w-4 h-4 bg-orange-300/20 rounded-full"></div>
                 <div className="absolute bottom-4 right-16 w-4 h-4 bg-orange-300/20 rounded-full"></div>
                 
                 {/* Main content area */}
-                <div className="relative z-10 flex items-center">
+                <div className="relative z-10 flex items-center flex-1">
                   <div className="flex-1 pr-6">
                     <div className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center mb-4 border border-white/30">
                       <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
