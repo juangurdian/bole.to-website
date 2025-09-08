@@ -9,7 +9,7 @@ export const translations = {
 
     // Hero Section
     introducing: "Presentamos",
-    buildWith: "Momentos. Inolvidables. Vive la experiencia",
+    buildWith: "Momentos. Inolvidables. Vive la experiencia.",
     confidence: "Esto es Bole.to",
     heroCopy: "Estamos creando una plataforma moderna en bole.to. Únete a la lista de espera y sé el primero en enterarte cuando lancemos.",
     joinWaitlist: "Unirse a la lista de espera",
@@ -449,15 +449,15 @@ export function detectLanguage(): Language {
       return stored;
     }
     
-    // Check navigator language
+    // Check navigator language - only use Spanish if explicitly Spanish
     const browserLang = navigator.language.toLowerCase();
     if (browserLang.startsWith('es')) {
       return 'es';
     }
   }
   
-  // Default to Spanish since main target audience is Spanish-speaking
-  return 'es';
+  // Default to English as requested
+  return 'en';
 }
 
 export function setLanguage(lang: Language) {

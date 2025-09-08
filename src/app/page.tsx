@@ -116,7 +116,12 @@ export default function Home() {
                   {t('whyChoose')}
                 </h2>
                 <p className="text-base sm:text-lg lg:text-xl text-foreground/70 max-w-4xl lg:max-w-5xl mx-auto px-4 leading-relaxed">
-                  {t('featuresSubtitle')}
+                  <span className="relative">
+                    <span className="float-left text-5xl sm:text-6xl lg:text-7xl font-bold mr-0.5 -mt-2 sm:-mt-3 leading-none bg-gradient-to-br from-blue-500 via-cyan-500 to-purple-500 bg-clip-text text-transparent">
+                      {t('featuresSubtitle').charAt(0)}
+                    </span>
+                    {t('featuresSubtitle').slice(1)}
+                  </span>
                 </p>
               </div>
 
