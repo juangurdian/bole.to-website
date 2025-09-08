@@ -237,8 +237,8 @@ export default function Home() {
         </div>
       </div>
       
-      <section className="w-full py-24 sm:py-32 lg:py-40 xl:py-48 bg-gradient-to-br from-background via-blue-500/5 to-purple-500/5" 
-        style={{ width: '100vw', margin: 0, padding: 0 }}>
+      <section className="w-full bg-gradient-to-br from-background via-blue-500/5 to-purple-500/5" 
+        style={{ width: '100vw', margin: 0, padding: 0, paddingTop: '6rem', paddingBottom: '4rem' }}>
         <div className="absolute inset-0">
           <div className="absolute top-10 sm:top-20 left-4 sm:left-10 w-24 sm:w-40 h-24 sm:h-40 bg-gradient-to-r from-purple-400/10 to-pink-400/10 rounded-full blur-2xl animate-float"></div>
           <div className="absolute bottom-10 sm:bottom-20 right-4 sm:right-10 w-20 sm:w-32 h-20 sm:h-32 bg-gradient-to-r from-blue-400/10 to-cyan-400/10 rounded-full blur-2xl animate-float-delayed"></div>
@@ -246,7 +246,7 @@ export default function Home() {
 
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6">
           <div className="text-center mb-12 sm:mb-16 lg:mb-20">
-            <div className="inline-flex items-center rounded-full border border-purple-500/20 bg-purple-500/10 backdrop-blur-sm px-3 sm:px-4 py-2 text-xs sm:text-sm mb-4 sm:mb-6">
+            <div className="inline-flex items-center rounded-full border border-purple-500/20 bg-purple-500/10 backdrop-blur-sm px-3 sm:px-4 py-2 text-xs sm:text-sm mb-6 sm:mb-8 mt-4 sm:mt-6">
               <div className="w-2 h-2 bg-purple-500 rounded-full animate-pulse mr-2"></div>
               <span className="text-purple-700 dark:text-purple-300 font-medium">{t('socialFeatures')}</span>
             </div>
@@ -980,7 +980,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-slate-50 via-purple-500/5 to-pink-500/5 dark:from-slate-900/50 dark:via-purple-500/5 dark:to-pink-500/5 overflow-hidden" 
+      <section className="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-background via-purple-500/5 to-pink-500/5 overflow-hidden" 
         style={{ width: '100vw', margin: 0, padding: 0, paddingTop: '4rem', paddingBottom: '6rem' }}>
         <div className="absolute inset-0">
           <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-r from-yellow-400/20 to-orange-400/20 rounded-full blur-3xl animate-pulse-slow"></div>
@@ -992,7 +992,7 @@ export default function Home() {
           <div className="text-center mb-16 sm:mb-20">
             <div className="inline-flex items-center rounded-full border border-yellow-500/20 bg-yellow-500/10 backdrop-blur-sm px-3 sm:px-4 py-2 text-xs sm:text-sm mb-6">
               <div className="w-2 h-2 bg-yellow-500 rounded-full animate-pulse mr-2"></div>
-              <span className="text-yellow-700 dark:text-yellow-300 font-medium">{t('cameraFeatures')}</span>
+              <span className="text-yellow-600 dark:text-yellow-400 font-medium">{t('cameraFeatures')}</span>
             </div>
             
             <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold tracking-tight mb-4 sm:mb-6">
@@ -1074,62 +1074,148 @@ export default function Home() {
                 <p className="text-sm text-foreground/60 mb-4">{t('dragToExplore')}</p>
               </div>
               
-              <DraggableCardContainer className="relative min-h-[400px] sm:min-h-[500px] flex items-center justify-center px-4">
-                <div className="relative grid grid-cols-2 gap-2 sm:gap-4 max-w-xs sm:max-w-lg">
-                  <DraggableCardBody className="w-32 h-40 sm:w-48 sm:h-64 bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-800 dark:to-slate-900 border-4 sm:border-8 border-white dark:border-slate-700 shadow-xl">
-                    <div className="h-full w-full bg-gradient-to-br from-yellow-200 via-orange-200 to-pink-200 dark:from-yellow-900/50 dark:via-orange-900/50 dark:to-pink-900/50 rounded-sm flex flex-col">
-                      <div className="flex-1 bg-gradient-to-br from-purple-400/20 to-blue-400/20 rounded-sm m-2 flex items-center justify-center">
-                        <div className="text-center">
-                          <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-2">
-                            <svg className="w-6 h-6 text-white/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                            </svg>
-                          </div>
-                          <div className="text-xs text-white/80 font-medium">DJ Set Vibes</div>
-                        </div>
-                      </div>
-                      <div className="bg-white dark:bg-slate-800 p-2 rounded-b-sm">
-                        <div className="text-xs text-foreground/60">23:45 PM</div>
-                      </div>
+              <DraggableCardContainer className="relative min-h-[400px] sm:min-h-[500px] flex items-center justify-center px-4 overflow-visible">
+                {/* Polaroid photos scattered naturally like dropped on a table */}
+                
+                {/* Photo 1 - Far left bottom */}
+                <DraggableCardBody 
+                  className="absolute w-48 sm:w-56 lg:w-64 bg-white p-2 sm:p-3 shadow-2xl cursor-move hover:shadow-3xl transition-shadow"
+                  style={{ 
+                    left: '-60px',
+                    top: '120px',
+                    transform: 'rotate(-23deg)',
+                    zIndex: 1 
+                  }}
+                >
+                  <div className="aspect-square bg-gradient-to-br from-purple-300 via-pink-300 to-yellow-300 mb-2 sm:mb-3 overflow-hidden">
+                    <div className="w-full h-full flex items-center justify-center">
+                      <span className="text-white/80 text-4xl sm:text-5xl">📸</span>
                     </div>
-                  </DraggableCardBody>
+                  </div>
+                  <div className="text-center">
+                    <p className="text-gray-700 text-xs sm:text-sm font-handwriting">Summer Vibes '24</p>
+                  </div>
+                </DraggableCardBody>
 
-                  <DraggableCardBody className="w-32 h-40 sm:w-48 sm:h-64 bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-800 dark:to-slate-900 border-4 sm:border-8 border-white dark:border-slate-700 shadow-xl">
-                    <div className="h-full w-full bg-gradient-to-br from-pink-200 via-purple-200 to-blue-200 dark:from-pink-900/50 dark:via-purple-900/50 dark:to-blue-900/50 rounded-sm flex flex-col">
-                      <div className="flex-1 bg-gradient-to-br from-emerald-400/20 to-teal-400/20 rounded-sm m-2 flex items-center justify-center">
-                        <div className="text-center">
-                          <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-2">
-                            <svg className="w-6 h-6 text-white/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3" />
-                            </svg>
-                          </div>
-                          <div className="text-xs text-white/80 font-medium">Dance Floor</div>
-                        </div>
-                      </div>
-                      <div className="bg-white dark:bg-slate-800 p-2 rounded-b-sm">
-                        <div className="text-xs text-foreground/60">01:20 AM</div>
-                      </div>
+                {/* Photo 2 - Top left */}
+                <DraggableCardBody 
+                  className="absolute w-48 sm:w-56 lg:w-64 bg-white p-2 sm:p-3 shadow-2xl cursor-move hover:shadow-3xl transition-shadow"
+                  style={{ 
+                    left: '80px',
+                    top: '-30px',
+                    transform: 'rotate(8deg)',
+                    zIndex: 2 
+                  }}
+                >
+                  <div className="aspect-square bg-gradient-to-br from-blue-300 via-cyan-300 to-teal-300 mb-2 sm:mb-3 overflow-hidden">
+                    <div className="w-full h-full flex items-center justify-center">
+                      <span className="text-white/80 text-4xl sm:text-5xl">🎵</span>
                     </div>
-                  </DraggableCardBody>
+                  </div>
+                  <div className="text-center">
+                    <p className="text-gray-700 text-xs sm:text-sm font-handwriting">Dance Floor Magic</p>
+                  </div>
+                </DraggableCardBody>
 
-                  <DraggableCardBody className="w-32 h-40 sm:w-48 sm:h-64 bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-800 dark:to-slate-900 border-4 sm:border-8 border-white dark:border-slate-700 shadow-xl col-span-2 justify-self-center">
-                    <div className="h-full w-full bg-gradient-to-br from-orange-200 via-red-200 to-pink-200 dark:from-orange-900/50 dark:via-red-900/50 dark:to-pink-900/50 rounded-sm flex flex-col">
-                      <div className="flex-1 bg-gradient-to-br from-yellow-400/20 to-orange-400/20 rounded-sm m-2 flex items-center justify-center">
-                        <div className="text-center">
-                          <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-2">
-                            <svg className="w-6 h-6 text-white/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                            </svg>
-                          </div>
-                          <div className="text-xs text-white/80 font-medium">Best Friends</div>
-                        </div>
-                      </div>
-                      <div className="bg-white dark:bg-slate-800 p-2 rounded-b-sm">
-                        <div className="text-xs text-foreground/60">02:15 AM</div>
-                      </div>
+                {/* Photo 3 - Center tilted */}
+                <DraggableCardBody 
+                  className="absolute w-48 sm:w-56 lg:w-64 bg-white p-2 sm:p-3 shadow-2xl cursor-move hover:shadow-3xl transition-shadow"
+                  style={{ 
+                    left: '50%',
+                    top: '50%',
+                    transform: 'translate(-50%, -50%) rotate(-12deg)',
+                    zIndex: 3 
+                  }}
+                >
+                  <div className="aspect-square bg-gradient-to-br from-orange-300 via-red-300 to-pink-300 mb-2 sm:mb-3 overflow-hidden">
+                    <div className="w-full h-full flex items-center justify-center">
+                      <span className="text-white/80 text-4xl sm:text-5xl">🎉</span>
                     </div>
-                  </DraggableCardBody>
-                </div>
+                  </div>
+                  <div className="text-center">
+                    <p className="text-gray-700 text-xs sm:text-sm font-handwriting">Best Night Ever!</p>
+                  </div>
+                </DraggableCardBody>
+
+                {/* Photo 4 - Right side high */}
+                <DraggableCardBody 
+                  className="absolute w-48 sm:w-56 lg:w-64 bg-white p-2 sm:p-3 shadow-2xl cursor-move hover:shadow-3xl transition-shadow"
+                  style={{ 
+                    right: '20px',
+                    top: '30px',
+                    transform: 'rotate(15deg)',
+                    zIndex: 5 
+                  }}
+                >
+                  <div className="aspect-square bg-gradient-to-br from-green-300 via-emerald-300 to-teal-300 mb-2 sm:mb-3 overflow-hidden">
+                    <div className="w-full h-full flex items-center justify-center">
+                      <span className="text-white/80 text-4xl sm:text-5xl">✨</span>
+                    </div>
+                  </div>
+                  <div className="text-center">
+                    <p className="text-gray-700 text-xs sm:text-sm font-handwriting">Midnight Memories</p>
+                  </div>
+                </DraggableCardBody>
+
+                {/* Photo 5 - Left center overlapping */}
+                <DraggableCardBody 
+                  className="absolute w-48 sm:w-56 lg:w-64 bg-white p-2 sm:p-3 shadow-2xl cursor-move hover:shadow-3xl transition-shadow"
+                  style={{ 
+                    left: '120px',
+                    top: '180px',
+                    transform: 'rotate(-7deg)',
+                    zIndex: 6 
+                  }}
+                >
+                  <div className="aspect-square bg-gradient-to-br from-indigo-300 via-purple-300 to-pink-300 mb-2 sm:mb-3 overflow-hidden">
+                    <div className="w-full h-full flex items-center justify-center">
+                      <span className="text-white/80 text-4xl sm:text-5xl">🌟</span>
+                    </div>
+                  </div>
+                  <div className="text-center">
+                    <p className="text-gray-700 text-xs sm:text-sm font-handwriting">Squad Goals</p>
+                  </div>
+                </DraggableCardBody>
+
+                {/* Photo 6 - Far right tilted */}
+                <DraggableCardBody 
+                  className="absolute w-48 sm:w-56 lg:w-64 bg-white p-2 sm:p-3 shadow-2xl cursor-move hover:shadow-3xl transition-shadow"
+                  style={{ 
+                    right: '-40px',
+                    top: '160px',
+                    transform: 'rotate(-18deg)',
+                    zIndex: 4 
+                  }}
+                >
+                  <div className="aspect-square bg-gradient-to-br from-yellow-300 via-amber-300 to-orange-300 mb-2 sm:mb-3 overflow-hidden">
+                    <div className="w-full h-full flex items-center justify-center">
+                      <span className="text-white/80 text-4xl sm:text-5xl">🔥</span>
+                    </div>
+                  </div>
+                  <div className="text-center">
+                    <p className="text-gray-700 text-xs sm:text-sm font-handwriting">DJ Killed It!</p>
+                  </div>
+                </DraggableCardBody>
+
+                {/* Photo 7 - Bottom right corner */}
+                <DraggableCardBody 
+                  className="absolute w-48 sm:w-56 lg:w-64 bg-white p-2 sm:p-3 shadow-2xl cursor-move hover:shadow-3xl transition-shadow"
+                  style={{ 
+                    right: '100px',
+                    bottom: '20px',
+                    transform: 'rotate(22deg)',
+                    zIndex: 2 
+                  }}
+                >
+                  <div className="aspect-square bg-gradient-to-br from-rose-300 via-pink-300 to-fuchsia-300 mb-2 sm:mb-3 overflow-hidden">
+                    <div className="w-full h-full flex items-center justify-center">
+                      <span className="text-white/80 text-4xl sm:text-5xl">💜</span>
+                    </div>
+                  </div>
+                  <div className="text-center">
+                    <p className="text-gray-700 text-xs sm:text-sm font-handwriting">Unforgettable</p>
+                  </div>
+                </DraggableCardBody>
 
                 {/* Camera Interface Overlay */}
                 <div className="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 px-4 w-full max-w-xs sm:max-w-none sm:w-auto">

@@ -287,6 +287,14 @@ body {
   }
 }
 
+/* Polaroid photo handwriting effect */
+.font-handwriting {
+  font-family: 'Courier New', Courier, monospace;
+  letter-spacing: -0.5px;
+  transform: rotate(-1deg);
+  display: inline-block;
+}
+
 /* Ticket stub styling */
 .ticket-stub {
   border-radius: 16px 16px 16px 16px;
