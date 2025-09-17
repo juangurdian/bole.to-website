@@ -1078,14 +1078,8 @@ export default function Home() {
                 {/* Polaroid photos scattered naturally like dropped on a table */}
                 
                 {/* Photo 1 - Far left bottom */}
-                <DraggableCardBody 
-                  className="absolute w-48 sm:w-56 lg:w-64 bg-white p-2 sm:p-3 shadow-2xl cursor-move hover:shadow-3xl transition-shadow"
-                  style={{ 
-                    left: '-60px',
-                    top: '120px',
-                    transform: 'rotate(-23deg)',
-                    zIndex: 1 
-                  }}
+                <DraggableCardBody
+                  className="w-48 sm:w-56 lg:w-64 bg-white p-2 sm:p-3 shadow-2xl cursor-move hover:shadow-3xl transition-shadow"
                 >
                   <div className="aspect-square bg-gradient-to-br from-purple-300 via-pink-300 to-yellow-300 mb-2 sm:mb-3 overflow-hidden">
                     <div className="w-full h-full flex items-center justify-center">
@@ -1093,19 +1087,13 @@ export default function Home() {
                     </div>
                   </div>
                   <div className="text-center">
-                    <p className="text-gray-700 text-xs sm:text-sm font-handwriting">Summer Vibes '24</p>
+                    <p className="text-gray-700 text-xs sm:text-sm font-handwriting">Summer Vibes &apos;24</p>
                   </div>
                 </DraggableCardBody>
 
                 {/* Photo 2 - Top left */}
-                <DraggableCardBody 
-                  className="absolute w-48 sm:w-56 lg:w-64 bg-white p-2 sm:p-3 shadow-2xl cursor-move hover:shadow-3xl transition-shadow"
-                  style={{ 
-                    left: '80px',
-                    top: '-30px',
-                    transform: 'rotate(8deg)',
-                    zIndex: 2 
-                  }}
+                <DraggableCardBody
+                  className="w-48 sm:w-56 lg:w-64 bg-white p-2 sm:p-3 shadow-2xl cursor-move hover:shadow-3xl transition-shadow"
                 >
                   <div className="aspect-square bg-gradient-to-br from-blue-300 via-cyan-300 to-teal-300 mb-2 sm:mb-3 overflow-hidden">
                     <div className="w-full h-full flex items-center justify-center">
@@ -1118,14 +1106,8 @@ export default function Home() {
                 </DraggableCardBody>
 
                 {/* Photo 3 - Center tilted */}
-                <DraggableCardBody 
-                  className="absolute w-48 sm:w-56 lg:w-64 bg-white p-2 sm:p-3 shadow-2xl cursor-move hover:shadow-3xl transition-shadow"
-                  style={{ 
-                    left: '50%',
-                    top: '50%',
-                    transform: 'translate(-50%, -50%) rotate(-12deg)',
-                    zIndex: 3 
-                  }}
+                <DraggableCardBody
+                  className="w-48 sm:w-56 lg:w-64 bg-white p-2 sm:p-3 shadow-2xl cursor-move hover:shadow-3xl transition-shadow"
                 >
                   <div className="aspect-square bg-gradient-to-br from-orange-300 via-red-300 to-pink-300 mb-2 sm:mb-3 overflow-hidden">
                     <div className="w-full h-full flex items-center justify-center">
@@ -1138,14 +1120,8 @@ export default function Home() {
                 </DraggableCardBody>
 
                 {/* Photo 4 - Right side high */}
-                <DraggableCardBody 
-                  className="absolute w-48 sm:w-56 lg:w-64 bg-white p-2 sm:p-3 shadow-2xl cursor-move hover:shadow-3xl transition-shadow"
-                  style={{ 
-                    right: '20px',
-                    top: '30px',
-                    transform: 'rotate(15deg)',
-                    zIndex: 5 
-                  }}
+                <DraggableCardBody
+                  className="w-48 sm:w-56 lg:w-64 bg-white p-2 sm:p-3 shadow-2xl cursor-move hover:shadow-3xl transition-shadow"
                 >
                   <div className="aspect-square bg-gradient-to-br from-green-300 via-emerald-300 to-teal-300 mb-2 sm:mb-3 overflow-hidden">
                     <div className="w-full h-full flex items-center justify-center">
@@ -1158,14 +1134,8 @@ export default function Home() {
                 </DraggableCardBody>
 
                 {/* Photo 5 - Left center overlapping */}
-                <DraggableCardBody 
-                  className="absolute w-48 sm:w-56 lg:w-64 bg-white p-2 sm:p-3 shadow-2xl cursor-move hover:shadow-3xl transition-shadow"
-                  style={{ 
-                    left: '120px',
-                    top: '180px',
-                    transform: 'rotate(-7deg)',
-                    zIndex: 6 
-                  }}
+                <DraggableCardBody
+                  className="w-48 sm:w-56 lg:w-64 bg-white p-2 sm:p-3 shadow-2xl cursor-move hover:shadow-3xl transition-shadow"
                 >
                   <div className="aspect-square bg-gradient-to-br from-indigo-300 via-purple-300 to-pink-300 mb-2 sm:mb-3 overflow-hidden">
                     <div className="w-full h-full flex items-center justify-center">
@@ -1178,14 +1148,8 @@ export default function Home() {
                 </DraggableCardBody>
 
                 {/* Photo 6 - Far right tilted */}
-                <DraggableCardBody 
-                  className="absolute w-48 sm:w-56 lg:w-64 bg-white p-2 sm:p-3 shadow-2xl cursor-move hover:shadow-3xl transition-shadow"
-                  style={{ 
-                    right: '-40px',
-                    top: '160px',
-                    transform: 'rotate(-18deg)',
-                    zIndex: 4 
-                  }}
+                <DraggableCardBody
+                  className="w-48 sm:w-56 lg:w-64 bg-white p-2 sm:p-3 shadow-2xl cursor-move hover:shadow-3xl transition-shadow"
                 >
                   <div className="aspect-square bg-gradient-to-br from-yellow-300 via-amber-300 to-orange-300 mb-2 sm:mb-3 overflow-hidden">
                     <div className="w-full h-full flex items-center justify-center">
@@ -1198,14 +1162,8 @@ export default function Home() {
                 </DraggableCardBody>
 
                 {/* Photo 7 - Bottom right corner */}
-                <DraggableCardBody 
-                  className="absolute w-48 sm:w-56 lg:w-64 bg-white p-2 sm:p-3 shadow-2xl cursor-move hover:shadow-3xl transition-shadow"
-                  style={{ 
-                    right: '100px',
-                    bottom: '20px',
-                    transform: 'rotate(22deg)',
-                    zIndex: 2 
-                  }}
+                <DraggableCardBody
+                  className="w-48 sm:w-56 lg:w-64 bg-white p-2 sm:p-3 shadow-2xl cursor-move hover:shadow-3xl transition-shadow"
                 >
                   <div className="aspect-square bg-gradient-to-br from-rose-300 via-pink-300 to-fuchsia-300 mb-2 sm:mb-3 overflow-hidden">
                     <div className="w-full h-full flex items-center justify-center">
